@@ -297,7 +297,7 @@ const DEFAULT_AGENDAS=[
  {id:'a2',tag:'행복',dir:'critical',statement:'구성원 행복은 회사가 주는 것이 아니라, 구성원 스스로 만드는 것이다',context:'SKMS는 구성원 행복을 경영의 궁극적 목적으로 둡니다. 그 행복의 주체는 누구일까요.',prompt:'나에게 구성원 행복이란',fill:'구성원 행복이란 ___',active:true},
  {id:'a3',tag:'SUPEX',dir:'critical',statement:'SUPEX 추구는 때로 번아웃을 정당화하는 데 쓰인다',context:'인간의 능력으로 도달할 수 있는 최고 수준을 추구한다는 SUPEX. 현장에서는 어떻게 쓰이고 있나요.',prompt:'내가 다시 정의하는 SUPEX는',fill:'SUPEX란 ___',active:true},
  {id:'a4',tag:'VWBE',dir:'affirming',statement:'AI가 두뇌 활용을 대신하는 시대에도 VWBE는 그대로 유효하다',context:'자발적(Voluntarily)이고 의욕적(Willingly)인 두뇌활용(Brain Engagement). AI 시대의 두뇌활용은 무엇일까요.',prompt:'AI 시대의 두뇌활용(VWBE)이란',fill:'AI 시대의 VWBE는 ___',active:true},
- {id:'a5',tag:'패기',dir:'critical',statement:"'패기'라는 단어는 지금 세대에게 잘 와닿지 않는다",context:'SKMS는 패기를 "스스로 동기부여하여 문제를 정면으로 마주하는 것"으로 정의합니다.',prompt:"'패기'를 요즘 말로 바꾼다면",fill:'패기는 요즘 말로 ___',active:true},
+ {id:'a5',tag:'패기',dir:'critical',statement:'패기라는 단어는 지금 세대에게 잘 와닿지 않는다',context:'SKMS는 패기를 스스로 동기부여하여 문제를 정면으로 마주하는 것으로 정의합니다.',prompt:'패기를 요즘 말로 바꾼다면',fill:'패기는 요즘 말로 ___',active:true},
  {id:'a6',tag:'이해관계자',dir:'affirming',statement:'우리 회사는 구성원 행복과 이해관계자 행복의 균형을 잘 지키고 있다',context:'SKMS는 구성원 행복과 이해관계자 행복의 조화를 말합니다.',prompt:'구성원과 이해관계자의 관계는',fill:'구성원과 이해관계자는 ___',active:true},
  {id:'a7',tag:'실천',dir:'critical',statement:'SKMS는 평가·보상과 연결되지 않으면 실천되지 않는다',context:'철학과 제도의 관계에 대한 질문입니다.',prompt:'SKMS가 살아 있는 조직이라면 매주 이런 장면이 보일 것이다',fill:'매주 ___이(가) 보인다',active:true},
  {id:'a8',tag:'리더',dir:'affirming',statement:'우리 리더들은 SKMS를 실제 의사결정의 기준으로 쓴다',context:'회의실에서, 인사 결정에서 SKMS의 언어가 등장하나요.',prompt:'SKMS를 실천하는 리더는',fill:'SKMS를 실천하는 리더는 ___',active:true},
@@ -414,7 +414,7 @@ const miniHtml=t=>`<div class="mini" role="img" aria-label="동의 ${t.pa}%, 모
 const isClosed=()=>!!(S&&S.settings&&S.settings.closeAt)&&new Date(S.settings.closeAt+'T23:59:59')<new Date();
 const companyList=()=>{const set=new Set((S&&S.settings&&S.settings.companies)||DEFAULT_COMPANIES);((S&&S.users)||[]).forEach(u=>{if(u.company)set.add(u.company);});return [...set];};
 function downloadText(filename,text){
-  try{const blob=new Blob(['﻿'+text],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},500);return true;}catch(e){return false;}
+  try{const blob=new Blob(['\uFEFF'+text],{type:'text/csv;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},500);return true;}catch(e){return false;}
 }
 
 async function go(v){view=v;await maybeRefresh();render();window.scrollTo({top:0});}
@@ -914,7 +914,7 @@ function renderAdmin(app){
     <div class="atabs" role="tablist">${tabs.map(([k,l])=>`<button type="button" role="tab" data-at="${k}" aria-selected="${tab===k}">${l}</button>`).join('')}</div>
     ${body}</div>`;
   $('#back').onclick=()=>go({name:'home'});   $$('[data-at]').forEach(b=>b.onclick=()=>{view.atab=b.dataset.at;render();});
-  const dl=$('#csvDl');if(dl)dl.onclick=async()=>{const text=await buildExport();downloadText(`skms_export.csv`,text);};
+  const dl=$('#csvDl');if(dl)dl.onclick=async()=>{const text=await buildExport();downloadText('skms_export.csv',text);};
 }
 
 /* ---------- BOOT LOGIC ---------- */
