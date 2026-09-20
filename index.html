@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
 <meta property="og:title" content="SKMS 아고라 — SKMS에 대해 어떻게 생각하세요?">
-<meta property="og:description" content="열 가지 생각거리에 답하고, 나만의 SKMS 한 줄을 남기고, Next SKMS를 위한 제안을 나눠요.">
+<meta property="og:description" content="열 가지 생각거리에 답하고, 나만의 SKMS 한 줄을 남겨요.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#3182F6">
+<meta name="theme-color" content="#EB5A47">
 </head>
 <body>
 <title>SKMS 아고라</title>
@@ -16,12 +16,13 @@
 <style>
 :root{
   color-scheme: light;
-  --ground:#FFFFFF; --soft:#F2F4F6; --soft-2:#E8EBEF; --line:#E5E8EB;
-  --ink:#191F28; --ink-2:#4E5968; --ink-3:#8B95A1; --ink-4:#B0B8C1;
-  --blue:#3182F6; --blue-ink:#FFFFFF; --blue-soft:#E8F3FF; --blue-deep:#1B64DA;
-  --agree:#3182F6; --unsure:#98A2AE; --disagree:#E5533F; --disagree-soft:#FDECEA;
-  --radius:20px; --radius-s:14px; --w:520px;
-  --shadow:0 2px 8px rgba(0,0,0,.04), 0 12px 32px -12px rgba(25,31,40,.14);
+  /* SK 채용 사이트 특유의 따뜻하고 팬시한 크림&소프트 코랄 테마 */
+  --ground:#FAF8F6; --soft:#F4EFEA; --soft-2:#E8E1DA; --line:#E4DDD6;
+  --ink:#1F2328; --ink-2:#525B66; --ink-3:#8C95A0; --ink-4:#B2BAC3;
+  --blue:#EB5A47; --blue-ink:#FFFFFF; --blue-soft:#FFF0ED; --blue-deep:#D04331;
+  --agree:#EB5A47; --unsure:#98A2AE; --disagree:#5A6578; --disagree-soft:#EEF2F6;
+  --radius:22px; --radius-s:14px; --w:520px;
+  --shadow:0 4px 20px rgba(235,90,71,.06), 0 12px 32px -12px rgba(31,35,40,.08);
 }
 *{box-sizing:border-box}
 html,body{background:var(--ground)}
@@ -38,22 +39,24 @@ textarea{resize:none;min-height:110px;font-size:1rem;line-height:1.6}
 [hidden]{display:none!important}
 
 .wrap{max-width:var(--w);margin:0 auto;padding-inline:20px;padding-block:0 calc(110px + env(safe-area-inset-bottom,0px))}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(8px)}
-header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(250,248,246,.92);backdrop-filter:blur(8px)}
+header.top .in{max-width:var(--w);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand-group{display:flex;align-items:center;gap:8px}
 .brand{font-weight:900;font-size:1.05rem;display:flex;align-items:center;gap:8px}
 .brand i{width:10px;height:10px;border-radius:50%;background:var(--blue);display:inline-block}
-.brand .mode{font-size:.68rem;font-weight:700;color:var(--ink-3);background:var(--soft);border-radius:999px;padding:2px 8px;margin-left:4px}
+.brand .mode{font-size:.68rem;font-weight:700;color:var(--ink-3);background:var(--soft);border-radius:999px;padding:2px 8px;margin-left:2px}
+.top-my-btn{display:inline-flex;align-items:center;gap:4px;background:var(--blue-soft);color:var(--blue-deep);border:0;padding:4px 12px;border-radius:999px;font-size:.82rem;font-weight:700;transition:background .15s}
+.top-my-btn:hover{background:var(--soft-2)}
 .hbtn{background:none;border:0;color:var(--ink-3);font-size:.88rem;padding:6px 8px;border-radius:8px}
 .hbtn:hover{background:var(--soft)}
-.back{display:inline-flex;align-items:center;gap:4px;background:none;border:0;color:var(--ink-2);padding:8px 0;font-size:.95rem}
+.back{display:inline-flex;align-items:center;gap:4px;background:none;border:0;color:var(--ink-2);padding:8px 0;font-size:.95rem;font-weight:600}
 .back::before{content:"←";font-size:1.1rem}
 
 .bnav{position:fixed;left:0;right:0;bottom:0;z-index:6;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
 .bnav .in{max-width:var(--w);margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr)}
-.bnav button{font-size:.68rem}
 .bnav button{background:none;border:0;padding:10px 4px 8px;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--ink-4);font-size:.72rem;font-weight:600}
 .bnav button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
-.bnav button[aria-current="page"]{color:var(--ink)}
+.bnav button[aria-current="page"]{color:var(--blue);font-weight:700}
 
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--blue);color:var(--blue-ink);border:0;border-radius:var(--radius-s);padding:16px 20px;font-weight:700;font-size:1.05rem;width:100%;transition:transform .08s ease,background .15s}
 .btn:active{transform:scale(.985)} .btn:hover{background:var(--blue-deep)}
@@ -61,7 +64,7 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .btn.sm{width:auto;padding:10px 16px;font-size:.92rem;border-radius:12px}
 .btn.xs{width:auto;padding:6px 12px;font-size:.82rem;border-radius:10px}
 .btn:disabled{background:var(--soft-2);color:var(--ink-4);cursor:not-allowed}
-.cta{position:fixed;left:0;right:0;bottom:0;padding:12px 20px calc(16px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,#fff 70%,rgba(255,255,255,0));z-index:4}
+.cta{position:fixed;left:0;right:0;bottom:0;padding:12px 20px calc(16px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,#FAF8F6 70%,rgba(250,248,246,0));z-index:4}
 .cta .in{max-width:var(--w);margin:0 auto;display:flex;gap:10px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:0;background:var(--soft);color:var(--ink-2);border-radius:999px;padding:10px 16px;font-size:.98rem;font-weight:500}
@@ -83,15 +86,15 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .prog{margin-top:16px;background:var(--soft);border-radius:999px;height:8px;overflow:hidden}
 .prog i{display:block;height:100%;background:var(--blue);border-radius:999px;transition:width .5s ease}
 .agendas{display:grid;grid-template-columns:1fr;gap:12px}
-.ag{position:relative;text-align:left;border:0;background:var(--soft);border-radius:var(--radius);padding:18px 18px 16px;display:flex;flex-direction:column;gap:14px;transition:transform .12s ease,background .15s}
-.ag:hover{background:var(--soft-2)} .ag:active{transform:scale(.98)}
-.ag .t{font-size:.78rem;color:var(--ink-3);font-weight:600}
+.ag{position:relative;text-align:left;border:0;background:#FFFFFF;box-shadow:var(--shadow);border-radius:var(--radius);padding:20px;display:flex;flex-direction:column;gap:14px;transition:transform .12s ease,box-shadow .15s}
+.ag:hover{box-shadow:0 6px 24px rgba(235,90,71,.12)} .ag:active{transform:scale(.98)}
+.ag .t{font-size:.78rem;color:var(--blue);font-weight:700}
 .ag .s{font-weight:700;font-size:1.05rem;line-height:1.4;letter-spacing:-.02em;text-wrap:pretty;margin-top:6px}
 .ag .foot{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:var(--ink-3);margin-top:8px}
 .ag .mark{font-weight:700}
 .ag .mark.agree{color:var(--agree)} .ag .mark.disagree{color:var(--disagree)} .ag .mark.unsure{color:var(--ink-2)}
-.ag .newdot{position:absolute;top:16px;right:16px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
-.ag.done{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.ag .newdot{position:absolute;top:18px;right:18px;width:8px;height:8px;border-radius:50%;background:var(--blue)}
+.ag.done{background:#FFFFFF;box-shadow:inset 0 0 0 1.5px var(--line)}
 .mini{height:26px;border-radius:8px;overflow:hidden;display:flex;background:var(--soft-2);gap:2px}
 .mini i{display:flex;align-items:center;justify-content:center;height:100%;font-size:.78rem;font-weight:800;color:#fff;font-style:normal;overflow:hidden;white-space:nowrap}
 .mini .a{background:var(--agree)} .mini .u{background:var(--unsure)} .mini .d{background:var(--disagree)}
@@ -101,7 +104,7 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .ag .lg{display:flex;justify-content:space-between;font-size:.72rem;color:var(--ink-3);margin-top:5px}
 .ag .lg b{font-weight:700;color:var(--ink-2)}
 .ag .lg i{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:0}
-.final{background:var(--ink);color:#fff;border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:6px;text-align:left;border:0;width:100%;margin-top:12px}
+.final{background:var(--ink);color:#fff;border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;gap:6px;text-align:left;border:0;width:100%;margin-top:12px;box-shadow:var(--shadow)}
 .final b{font-size:1.1rem} .final span{color:rgba(255,255,255,.72);font-size:.92rem}
 
 /* detail */
@@ -110,16 +113,14 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .steps{display:flex;gap:6px;margin-top:18px}
 .steps i{flex:1;height:4px;border-radius:999px;background:var(--soft-2)} .steps i.on{background:var(--blue)}
 .stances{display:flex;flex-direction:column;gap:10px;margin-top:24px}
-.stance{border:0;background:var(--soft);border-radius:var(--radius-s);padding:18px 20px;text-align:left;font-size:1.1rem;font-weight:700;display:flex;justify-content:space-between;align-items:center;transition:transform .08s ease,background .15s}
+.stance{border:0;background:#FFFFFF;box-shadow:var(--shadow);border-radius:var(--radius-s);padding:18px 20px;text-align:left;font-size:1.1rem;font-weight:700;display:flex;justify-content:space-between;align-items:center;transition:transform .08s ease,background .15s}
 .stance:active{transform:scale(.985)}
 .stance small{font-weight:400;color:var(--ink-3);font-size:.85rem}
 .stance[data-s="agree"]:hover,.stance[data-s="agree"].on{background:var(--blue-soft);color:var(--blue-deep)}
 .stance[data-s="unsure"]:hover,.stance[data-s="unsure"].on{background:var(--soft-2);color:var(--ink)}
-.stance[data-s="disagree"]:hover,.stance[data-s="disagree"].on{background:var(--disagree-soft);color:var(--disagree)}
+.stance[data-s="disagree"]:hover,.stance[data-s="disagree"].on{background:var(--soft-2);color:var(--ink-2)}
 .why{margin-top:24px}
 .why .cnt{text-align:right;font-size:.8rem;color:var(--ink-4);margin-top:4px}
-.samples{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.samples button{border:0;background:#fff;box-shadow:inset 0 0 0 1px var(--line);border-radius:999px;padding:7px 12px;font-size:.85rem;color:var(--ink-2)}
 .fill{font-size:1.35rem;font-weight:900;letter-spacing:-.03em;line-height:1.4;margin-top:6px}
 .fill em{font-style:normal;color:var(--blue);border-bottom:3px solid var(--blue);padding:0 4px}
 
@@ -127,22 +128,22 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .res-head .big{font-size:2.5rem;font-weight:900;letter-spacing:-.04em;line-height:1.1}
 .res-head .big span{font-size:1.05rem;font-weight:700;color:var(--ink-2);margin-left:6px;letter-spacing:-.02em}
 .res-head p{color:var(--ink-2);margin-top:6px}
-.bar{height:30px;border-radius:9px;overflow:hidden;display:flex;gap:2px;background:var(--soft);margin-top:18px}
+.bar{height:30px;border-radius:999px;overflow:hidden;display:flex;gap:2px;background:var(--soft);margin-top:18px}
 .bar i{display:flex;align-items:center;justify-content:center;height:100%;transition:width .6s cubic-bezier(.2,.7,.2,1);font-size:.85rem;font-weight:800;color:#fff;font-style:normal;overflow:hidden;white-space:nowrap}
 .bar .a{background:var(--agree)} .bar .u{background:var(--unsure)} .bar .d{background:var(--disagree)}
 .legend{display:flex;gap:14px;margin-top:10px;font-size:.86rem;color:var(--ink-2);flex-wrap:wrap}
 .legend b{font-weight:700;color:var(--ink)}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 .tabs{display:flex;gap:6px;margin:22px 0 12px;background:var(--soft);padding:4px;border-radius:12px}
-.tabs button{flex:1;border:0;background:none;border-radius:9px;padding:9px 4px;font-weight:600;color:var(--ink-3);font-size:.9rem}
+.tabs button{flex:1;border:0;background:none;border-radius:999px;padding:9px 4px;font-weight:600;color:var(--ink-3);font-size:.9rem}
 .tabs button[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .reasons{display:flex;flex-direction:column;gap:10px}
-.rs{background:var(--soft);border-radius:var(--radius-s);padding:14px 16px}
+.rs{background:#FFFFFF;box-shadow:var(--shadow);border-radius:var(--radius-s);padding:14px 16px}
 .rs p{font-size:.98rem;line-height:1.55}
 .rs .m{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:.78rem;color:var(--ink-3);gap:8px}
 .rs.mine{box-shadow:inset 0 0 0 1.5px var(--blue)}
 .rs.q p{font-weight:600;font-size:1.02rem}
-.like{background:#fff;border:0;border-radius:999px;padding:4px 10px;font-size:.8rem;color:var(--ink-2);white-space:nowrap}
+.like{background:var(--soft);border:0;border-radius:999px;padding:4px 10px;font-size:.8rem;color:var(--ink-2);white-space:nowrap}
 .like.on{background:var(--blue-soft);color:var(--blue-deep);font-weight:700}
 .empty{padding:24px 16px;text-align:center;color:var(--ink-3);background:var(--soft);border-radius:var(--radius-s);font-size:.95rem}
 .lock{display:flex;gap:12px;align-items:flex-start;background:var(--soft);border-radius:var(--radius-s);padding:14px 16px;color:var(--ink-2);font-size:.92rem}
@@ -157,7 +158,7 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .filters select{border:0;background:var(--soft);border-radius:999px;padding:8px 32px 8px 14px;font-size:.9rem;color:var(--ink-2);appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path d='M1 1l4 4 4-4' stroke='%238B95A1' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 12px center;flex:0 0 auto;width:auto}
 .insights{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
 @media (max-width:400px){.insights{grid-template-columns:1fr}}
-.ins{border-radius:var(--radius);padding:18px;background:var(--soft);display:flex;flex-direction:column;gap:6px;min-height:130px}
+.ins{border-radius:var(--radius);padding:18px;background:#FFFFFF;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:6px;min-height:130px}
 .ins .k{font-size:.78rem;font-weight:700;color:var(--ink-3)}
 .ins .v{font-size:1.9rem;font-weight:900;letter-spacing:-.04em;line-height:1.05}
 .ins .v small{font-size:.9rem;font-weight:600;color:var(--ink-2);margin-left:4px;letter-spacing:-.01em}
@@ -166,7 +167,7 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .ins.hero .k{color:rgba(255,255,255,.6)} .ins.hero .s{color:rgba(255,255,255,.85)}
 .ins.hero .v{font-size:1.5rem;line-height:1.3;letter-spacing:-.03em;margin-top:4px}
 .ins.blue{background:var(--blue-soft)} .ins.blue .v{color:var(--blue-deep)}
-.ins.red{background:var(--disagree-soft)} .ins.red .v{color:var(--disagree)}
+.ins.red{background:var(--soft-2)} .ins.red .v{color:var(--ink)}
 .dmap{display:flex;flex-direction:column;gap:6px;margin-top:6px}
 .dmap .hd{display:grid;grid-template-columns:1fr 1fr;font-size:.75rem;color:var(--ink-3);font-weight:600;padding:0 2px 4px}
 .dmap .hd span:last-child{text-align:right}
@@ -187,20 +188,15 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .heat .hc{height:34px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--ink)}
 .heat .hc.na{background:var(--soft);color:var(--ink-4);font-weight:500} .heat .hc.dk{color:#fff}
 .hscale{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:.75rem;color:var(--ink-3)}
-.hscale i{flex:1;height:8px;border-radius:999px;background:linear-gradient(to right,#EEF4FF,#3182F6)}
+.hscale i{flex:1;height:8px;border-radius:999px;background:linear-gradient(to right,#FFF0ED,#EB5A47)}
 .cbars{display:flex;flex-direction:column;gap:8px}
 .cb{display:grid;grid-template-columns:110px 1fr 40px;gap:10px;align-items:center;font-size:.88rem}
 .cb .tk{height:10px;background:var(--soft);border-radius:999px;overflow:hidden}
 .cb .tk i{display:block;height:100%;background:var(--ink-2);border-radius:999px}
 .cb .n{text-align:right;color:var(--ink-2)}
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
-.pair .pc{background:var(--soft);border-radius:var(--radius-s);padding:14px}
-.pair .pc .k{font-size:.78rem;color:var(--ink-3);font-weight:600}
-.pair .pc .v{font-size:1.5rem;font-weight:900;letter-spacing:-.03em;color:var(--blue-deep)}
-.pair .pc .v small{font-size:.8rem;color:var(--ink-3);font-weight:500;margin-left:2px}
 
 /* ours */
-.theme{margin-top:22px;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);border-radius:var(--radius);padding:18px}
+.theme{margin-top:22px;background:#fff;box-shadow:var(--shadow);border-radius:var(--radius);padding:20px}
 .theme .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .theme .pr{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;line-height:1.35}
 .theme .pr em{font-style:normal;color:var(--blue)}
@@ -220,7 +216,7 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .tdesc{background:var(--blue-soft);border-radius:var(--radius-s);padding:14px 16px;margin-top:12px}
 .tdesc b{color:var(--blue-deep);font-size:.98rem}
 .tdesc p{font-size:.9rem;color:var(--ink-2);margin-top:4px}
-.idea{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);border-radius:var(--radius);padding:16px 18px;margin-top:12px}
+.idea{background:#fff;box-shadow:var(--shadow);border-radius:var(--radius);padding:18px;margin-top:12px}
 .idea.mine{box-shadow:inset 0 0 0 1.5px var(--blue)}
 .idea .tp{font-size:.74rem;font-weight:700;color:var(--blue)}
 .idea .bd{font-size:1rem;line-height:1.6;margin-top:6px;white-space:pre-wrap;word-break:break-word}
@@ -230,8 +226,6 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .cmt{background:var(--soft);border-radius:10px;padding:9px 12px;font-size:.9rem;line-height:1.5}
 .cmt .m{display:flex;justify-content:space-between;font-size:.74rem;color:var(--ink-3);margin-top:4px}
 .cmt.mine{box-shadow:inset 0 0 0 1.5px var(--blue)}
-.cform{display:flex;gap:8px;margin-top:8px}
-.cform input{padding:9px 12px;font-size:.92rem;border-radius:10px}
 .compose{background:var(--soft);border-radius:var(--radius);padding:16px;margin-top:14px}
 .idea .bd.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .idea.pin{background:var(--blue-soft)}
@@ -243,11 +237,12 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .reply .m{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:.76rem;color:var(--ink-3);gap:8px}
 .rlist{display:flex;flex-direction:column;gap:8px}
 .kindseg{display:flex;gap:6px;background:#fff;padding:4px;border-radius:12px}
-.kindseg button{flex:1;border:0;background:none;border-radius:9px;padding:9px 4px;font-weight:600;color:var(--ink-3);font-size:.9rem}
+.kindseg button{flex:1;border:0;background:none;border-radius:999px;padding:9px 4px;font-weight:600;color:var(--ink-3);font-size:.9rem}
 .kindseg button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .compose textarea{background:#fff;min-height:120px}
 .compose .cnt{text-align:right;font-size:.78rem;color:var(--ink-4);margin-top:4px}
 .compose .row2{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+
 /* me */
 .merow{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
 .merow .s{font-weight:600;font-size:.95rem;line-height:1.4}
@@ -269,8 +264,8 @@ header.top .in{max-width:var(--w);margin:0 auto;padding:14px 20px;display:flex;a
 .seg button{border:0;background:none;padding:7px 12px;border-radius:8px;color:var(--ink-3);font-weight:600;font-size:.86rem}
 .seg button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:.74rem;font-weight:600;background:var(--soft);color:var(--ink-2)}
-.pill.on{background:var(--blue-soft);color:var(--blue-deep)} .pill.off{background:var(--disagree-soft);color:var(--disagree)} .pill.warn{background:#FFF4E0;color:#B26A00}
-.card{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);border-radius:var(--radius);padding:18px;margin-top:14px}
+.pill.on{background:var(--blue-soft);color:var(--blue-deep)} .pill.off{background:var(--soft-2);color:var(--ink-3)} .pill.warn{background:#FFF4E0;color:#B26A00}
+.card{background:#fff;box-shadow:var(--shadow);border-radius:var(--radius);padding:18px;margin-top:14px}
 .card h3{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 table.t{width:100%;border-collapse:collapse;font-size:.86rem}
 table.t th,table.t td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -287,7 +282,10 @@ table.t th{color:var(--ink-3);font-weight:500;font-size:.76rem}
 </style>
 
 <header class="top"><div class="in">
-  <div class="brand"><i></i><span id="brandName">SKMS 아고라</span><span class="mode" id="campTag" hidden></span><span class="mode" id="modeTag" hidden>미리보기</span></div>
+  <div class="brand-group">
+    <div class="brand"><i></i><span id="brandName">SKMS 아고라</span><span class="mode" id="campTag" hidden></span><span class="mode" id="modeTag" hidden>미리보기</span></div>
+    <button class="top-my-btn" id="navMyTop" type="button">My</button>
+  </div>
   <div style="display:flex;gap:2px;align-items:center">
     <button class="hbtn" id="navAdmin" hidden type="button">관리</button>
     <button class="hbtn" id="navOut" hidden type="button">나가기</button>
@@ -295,13 +293,16 @@ table.t th{color:var(--ink-3);font-weight:500;font-size:.76rem}
 </div></header>
 
 <main class="wrap" id="app"></main>
+
+<!-- 하단 5개 탭: 설문 / 결과 / 우리의 SKMS / ERRC / 아이디어 -->
 <nav class="bnav" id="bnav" hidden><div class="in">
-  <button type="button" data-go="home" aria-current="page"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>홈</button>
+  <button type="button" data-go="home" aria-current="page"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>설문</button>
   <button type="button" data-go="results"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>결과</button>
   <button type="button" data-go="ours"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h10M4 19h7"/><path d="M17 15l2 2 4-4"/></svg>우리의 SKMS</button>
+  <button type="button" data-go="errc"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>ERRC</button>
   <button type="button" data-go="ideas" id="navIdeas"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.6 1 1.4 1 2.5h6c0-1.1.4-1.9 1-2.5A6 6 0 0 0 12 3z"/></svg>아이디어</button>
-  <button type="button" data-go="me"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>나</button>
 </div></nav>
+
 <div class="toast" id="toast" role="status"></div>
 <div class="loading" id="loading">불러오는 중…</div>
 
@@ -309,12 +310,11 @@ table.t th{color:var(--ink-3);font-weight:500;font-size:.76rem}
 (async function(){
 'use strict';
 const KEY='skms_voice_v6';
-/* 회차(캠페인): 링크의 ?c=슬러그 로 구분. 없으면 main */
 const C=((new URLSearchParams(location.search).get('c')||'main').toLowerCase().replace(/[^a-z0-9_-]/g,'')||'main');
 const KEYC=KEY+'_'+C, KEY_CAMPS=KEY+'_campaigns';
 const slugOk=x=>/^[a-z0-9][a-z0-9_-]{1,30}$/.test(x);
 const campaignUrl=slug=>location.origin+location.pathname+(slug==='main'?'':'?c='+slug);
-const LOCAL_PIN='skms2026'; // 미리보기 모드 전용. 실제 배포에서는 Supabase의 app_secrets 테이블에 저장된 코드로 검증
+const LOCAL_PIN='skms2026';
 const MIN_N=5;
 const TENURES=['5년 미만','5~10년','10~15년','15~20년','20년 이상'];
 const ENTRIES=['신입 입사','경력 입사'];
@@ -340,17 +340,23 @@ const DEFAULT_TOPICS=[
  {id:'t0',title:'자유 제안',desc:'위 주제에 없는 생각, 질문, 제안 무엇이든.'},
 ];
 const FINAL={id:'final',tag:'종합',prompt:'그래서, 내가 생각하는 SKMS는',fill:'내가 생각하는 SKMS는 ___'};
-const REASON_HINTS={agree:['현장에서 실제로 그렇게 느껴요','직접 겪은 사례가 있어요','신입에게 설명할 때 특히 그래요'],unsure:['둘 다 맞는 면이 있어요','판단할 정보가 부족해요','회사마다 다른 것 같아요'],disagree:['제 경험은 반대예요','원인이 다른 데 있다고 봐요','바꾸면 잃는 게 더 커요']};
 
-/* ================= 데이터 계층 (local | remote) ================= */
+// ERRC 전용 주제 정의
+const ERRC_TOPICS=[
+ {id:'errc_e',tag:'E/R',title:'버리거나 줄일 것 (Eliminate & Reduce)',prompt:'SKMS 실천을 위해 우리가 과감히 버리거나 줄여야 할 것'},
+ {id:'errc_r',tag:'R',title:'강화하고 키울 것 (Raise)',prompt:'SKMS 문화 정착을 위해 더 강하게 추진하고 높여야 할 것'},
+ {id:'errc_c',tag:'C',title:'새로 시도할 것 (Create)',prompt:'Next SKMS를 위해 새롭게 시도하거나 만들고 싶은 것'}
+];
+
+/* ================= 데이터 계층 ================= */
 const CFG=window.SKMS_CONFIG||{};
 const REMOTE=!!(CFG.supabaseUrl&&CFG.supabaseAnonKey);
 let sb=null;
 function loadScript(src,timeout){return new Promise((res,rej)=>{const el=document.createElement('script');el.src=src;el.async=true;const t=setTimeout(()=>rej(new Error('timeout')),timeout||15000);el.onload=()=>{clearTimeout(t);res();};el.onerror=()=>{clearTimeout(t);rej(new Error('load failed'));};document.head.appendChild(el);});}
 let S=null, me=null, adminOK=false, adminPin='', view={name:'home'}, ovFilter={company:'',tenure:'',entry:''}, lastLoad=0;
-function defaultSettings(name){return {name:name||'SKMS 아고라',createdAt:new Date().toISOString().slice(0,10),reasonsPublic:true,sentencesPublic:true,showResultsBeforeVote:false,shuffle:true,notice:'',closeAt:'',allowedDomains:[],companies:DEFAULT_COMPANIES.slice(),agendas:JSON.parse(JSON.stringify(DEFAULT_AGENDAS)),ideasEnabled:true,ideasPublic:true,ideaTopics:JSON.parse(JSON.stringify(DEFAULT_TOPICS))};}
+function defaultSettings(name){return {name:name||'SKMS 아고라',createdAt:new Date().toISOString().slice(0,10),reasonsPublic:true,sentencesPublic:true,showResultsBeforeVote:false,shuffle:false,notice:'',closeAt:'',allowedDomains:[],companies:DEFAULT_COMPANIES.slice(),agendas:JSON.parse(JSON.stringify(DEFAULT_AGENDAS)),ideasEnabled:true,ideasPublic:true,ideaTopics:JSON.parse(JSON.stringify(DEFAULT_TOPICS))};}
 function defaults(){return {users:[],votes:[],sentences:[],likes:[],ideas:[],comments:[],settings:defaultSettings(),seeded:false};}
-let CAMPS={};   // slug → settings (모든 회차)
+let CAMPS={};
 let campaignMissing=false;
 function normalizeSettings(st){const d=defaultSettings();for(const k in d)if(st[k]===undefined)st[k]=d[k];if(st.name==='SKMS 보이스')st.name='SKMS 아고라';return st;}
 async function fetchAll(table){let out=[],from=0;for(;;){const {data,error}=await sb.from(table).select('*').eq('campaign',C).range(from,from+999);if(error)throw error;out=out.concat(data||[]);if(!data||data.length<1000)break;from+=1000;}return out;}
@@ -376,7 +382,6 @@ function localLoad(){
   if(!S)S=defaults();S.ideas=S.ideas||[];S.comments=S.comments||[];
   campaignMissing=!CAMPS[C]&&C!=='main';
   if(CAMPS[C])S.settings=normalizeSettings(CAMPS[C]);else{normalizeSettings(S.settings);CAMPS[C]=S.settings;}
-  if(!S.seeded&&C==='main'){seed();S.seeded=true;}
   S.seeded=true;localSave();
 }
 function localSave(){if(REMOTE)return;try{CAMPS[C]=S.settings;const {settings,...rest}=S;localStorage.setItem(KEYC,JSON.stringify(rest));localStorage.setItem(KEY_CAMPS,JSON.stringify(CAMPS));}catch(e){}}
@@ -399,72 +404,12 @@ const DB={
   },
   async saveSettings(){localSave();if(REMOTE)return remoteTry(()=>DB.admin('set_settings',{campaign:C,data:S.settings}),'설정을 저장하지 못했어요');return true;},
   async saveCampaign(slug,data){CAMPS[slug]=data;if(!REMOTE){try{localStorage.setItem(KEY_CAMPS,JSON.stringify(CAMPS));}catch(e){}return true;}return remoteTry(()=>DB.admin('set_settings',{campaign:slug,data}),'회차를 저장하지 못했어요');},
-  /* 회차별 집계 (관리자 비교용): {slug:{n, byAid:{aid:{a,u,d,n}}}} */
   async stats(){
     if(REMOTE){return await DB.admin('stats',{});}
     const out={};Object.keys(CAMPS).forEach(slug=>{const d=localCampaignData(slug);const byAid={};(d.votes||[]).forEach(v=>{const b=byAid[v.aid]||(byAid[v.aid]={a:0,u:0,d:0,n:0});b[v.stance[0]]++;b.n++;});out[slug]={n:new Set((d.votes||[]).map(v=>v.uid)).size,byAid};});return out;
   }
 };
 async function maybeRefresh(force){if(!REMOTE)return;if(!force&&Date.now()-lastLoad<20000)return;try{const keepMe=me;await remoteLoad();if(keepMe&&!S.users.find(u=>u.id===keepMe.id))S.users.push(keepMe);}catch(e){console.error(e);}}
-
-/* ---------- 미리보기용 예시 데이터 (local 모드에서만) ---------- */
-function rng(seed){let s=seed;return()=>{s=(s*1664525+1013904223)%4294967296;return s/4294967296;};}
-function seed(){
-  const r=rng(917);const pick=a=>a[Math.floor(r()*a.length)];
-  const wpick=w=>{let t=r()*w.reduce((a,b)=>a+b,0);for(let i=0;i<w.length;i++){t-=w[i];if(t<0)return i;}return w.length-1;};
-  const R={
-   a1:{agree:['신입 교육 때 문장을 읽어주면 다들 눈이 흐려져요. 뜻은 좋은데 말이 옛날 말이에요.','"패기", "두뇌활용" 같은 단어는 번역이 필요해요.','핵심은 지키되 문장은 지금 사람 말로.'],unsure:['표현을 바꾸면 의미도 미묘하게 바뀔까 걱정돼요.','어디까지가 표현이고 어디부터가 내용인지 애매해요.'],disagree:['원문 그대로의 무게가 있어요. 해설을 잘 붙이면 돼요.','30년 된 문장이라서 오히려 신뢰가 가요.']},
-   a2:{agree:['회사는 조건을 만들 뿐이고 행복은 결국 각자의 몫이라고 생각해요.','행복을 회사가 준다고 하면 수동적이 돼요.'],unsure:['둘 다 필요한 것 같아요. 조건 없이 스스로 만들 수는 없으니까요.'],disagree:['그 말이 회사 책임을 지우는 데 쓰이면 위험해요.','급여, 리더십, 업무량이 행복의 대부분을 결정해요. 그건 회사 몫이에요.','스스로 만들라는 말은 힘든 사람에게 두 번 상처가 돼요.']},
-   a3:{agree:['"SUPEX니까 한 번 더"라는 말을 들으면 그냥 야근하라는 뜻이에요.','목표를 높이는 건 좋은데 자원은 그대로예요.','한계에 도전한다는 말이 쉬는 걸 죄책감 들게 해요.'],unsure:['리더에 따라 다른 것 같아요.','SUPEX 자체의 문제라기보다 쓰는 사람의 문제 같아요.'],disagree:['SUPEX는 태도지 노동시간이 아니에요. 오해예요.','제 팀은 SUPEX를 "더 똑똑하게"로 씁니다.']},
-   a4:{agree:['AI가 답을 내도 질문은 사람이 해요. 자발성이 더 중요해져요.','두뇌활용의 정의가 "AI와 함께 생각하기"로 넓어지면 돼요.'],unsure:['유효하긴 한데 "두뇌활용"이라는 표현은 다시 봐야 할 것 같아요.','AI가 어디까지 대신할지 아직 몰라서요.'],disagree:['Brain Engagement라는 말 자체가 사람이 계산하던 시대의 말이에요.','AI 시대의 핵심은 판단과 책임인데 VWBE엔 그게 없어요.']},
-   a5:{agree:['패기라고 하면 90년대 영업사원 느낌이에요.','"용기"나 "끝까지 해보는 힘" 정도면 훨씬 와닿아요.','신입들이 그 단어에서 먼저 거리감을 느껴요.'],unsure:['단어는 낡았지만 정의는 좋아요. 정의를 살리는 방법이 있을까요.'],disagree:['패기만큼 SK다운 단어가 없어요. 설명을 잘하면 돼요.','단어를 바꾼다고 태도가 생기진 않아요.']},
-   a6:{agree:['구성원 행복 조사, 복지 이야기는 오히려 늘었어요.','이해관계자 안에 구성원이 포함된 거라 균형 문제는 아니에요.'],unsure:['둘이 충돌하는 상황을 실제로 본 적은 없어요.'],disagree:['사회적 가치, ESG 이야기가 커지면서 구성원은 뒤로 밀린 느낌이에요.','대외 발표 자료엔 이해관계자, 사내 자료엔 구성원. 순서가 달라요.']},
-   a7:{agree:['평가 항목에 없으면 아무도 안 읽어요. 현실이에요.','실천 사례가 승진에 반영되는 걸 보면 다들 움직여요.','좋은 말은 많은데 행동으로 이어지는 장치가 없어요.'],unsure:['연결하면 형식적인 실천만 늘어날까 걱정도 돼요.'],disagree:['철학을 KPI로 만들면 철학이 죽어요.','보상 없이도 실천하는 사람들이 진짜예요. 그 사람들을 보이게 하는 게 먼저.']},
-   a8:{agree:['우리 본부장님은 회의에서 "이게 구성원 행복에 맞나"를 실제로 물어요.'],unsure:['쓰는지 안 쓰는지 알 수가 없어요. 말로 안 하시니까.','리더마다 편차가 너무 커요.'],disagree:['회의에서 SKMS 단어를 들어본 기억이 없어요.','실적 이야기 끝나면 시간이 없어요.','인사 결정에 SKMS가 기준이었다면 결과가 달랐을 거예요.']},
-   a9:{agree:['일하는 방식이 근본적으로 바뀌는데 가치가 그대로일 수 없어요.','"두뇌활용", "패기"는 사람만 일하던 시대의 가치예요.'],unsure:['표현 개정과 가치 재정의의 경계가 애매해요.','가치는 그대로 두고 해석을 바꾸는 게 맞을 수도.'],disagree:['행복, 자발성, 최고 추구는 AI 시대에도 변하지 않아요.','가치를 바꾸면 SKMS가 아니라 새 문서예요.','시대마다 가치를 바꾸면 신뢰가 무너져요.']},
-   a10:{agree:['다른 그룹 다녀본 사람들은 SK가 다르다고 해요. 그 차이의 뿌리예요.','행복을 경영의 목적으로 명문화한 회사는 드물어요.'],unsure:['구별해 주는 건 맞는데 그게 SKMS 덕인지는 모르겠어요.'],disagree:['요즘 회사들 다 비슷한 말 해요. 실천이 없으면 구별이 안 돼요.','밖에서는 SKMS를 아무도 몰라요.']},
-  };
-  const SENT={
-   a1:['SKMS는 우리가 함께 일하는 이유에 대한 약속이다','SKMS는 행복하게 일해서 세상을 조금 낫게 만드는 방법이다','SKMS는 매일의 판단 기준이다'],
-   a2:['구성원 행복이란 월요일 아침이 두렵지 않은 것','구성원 행복이란 내 일의 의미를 내가 설명할 수 있는 상태','구성원 행복이란 성장과 안전이 같이 있는 것'],
-   a3:['SUPEX란 어제의 나보다 나은 방법을 찾는 습관','SUPEX란 더 오래가 아니라 더 똑똑하게','SUPEX란 한계를 정하지 않는 태도, 사람을 갈지 않는 태도'],
-   a4:['AI 시대의 VWBE는 좋은 질문을 던지는 힘','AI 시대의 VWBE는 AI와 함께 생각하되 책임은 내가 지는 것','AI 시대의 VWBE는 시키지 않아도 실험하는 것'],
-   a5:['패기는 요즘 말로 "일단 해보는 용기"','패기는 요즘 말로 "끝까지 가보는 힘"','패기는 요즘 말로 "문제 앞에서 도망치지 않기"'],
-   a6:['구성원과 이해관계자는 순서가 아니라 같은 원 안에 있다','구성원이 먼저 행복해야 고객도 행복하다'],
-   a7:['매주 리더가 "이게 구성원 행복에 맞나" 묻는 장면이 보인다','매주 실패한 실험을 편하게 공유하는 회의가 보인다','매주 SKMS 언어로 피드백하는 1on1이 보인다'],
-   a8:['SKMS를 실천하는 리더는 먼저 묻고 나중에 지시한다','SKMS를 실천하는 리더는 실적 회의에서도 사람 이야기를 한다','SKMS를 실천하는 리더는 자기 실패를 먼저 말한다'],
-   a9:['AI 시대 SKMS에는 "책임"이 들어가야 한다','AI 시대 SKMS에는 "함께 배우는 조직"이 들어가야 한다','AI 시대 SKMS에는 "속도보다 방향"이 들어가야 한다'],
-   a10:['SKMS는 SK에게 OS다','SKMS는 SK에게 액자 속 문장이다, 아직은','SKMS는 SK에게 30년 된 나침반이다'],
-   final:['내가 생각하는 SKMS는 "왜 함께 일하는가"에 대한 대답','내가 생각하는 SKMS는 한 페이지로 줄여야 사는 문서','내가 생각하는 SKMS는 리더가 먼저 쓰는 언어','내가 생각하는 SKMS는 행복을 경영의 목적으로 둔 드문 약속','내가 생각하는 SKMS는 다시 써야 할 때가 된 좋은 문장'],
-  };
-  const bias={a1:[6,2,2],a2:[3,3,4],a3:[5,3,2],a4:[4,4,2],a5:[6,2,2],a6:[3,3,4],a7:[6,2,2],a8:[2,3,5],a9:[4,3,3],a10:[5,3,2]};
-  const n=56;const now=Date.now();
-  for(let i=0;i<n;i++){
-    const ti=wpick([5,4,3,2,2]);const tenure=TENURES[ti];const entry=r()<(ti<=1?0.7:0.45)?'신입 입사':'경력 입사';
-    const dayAgo=Math.floor(Math.pow(r(),1.6)*13);
-    const u={id:'demo'+i,name:'예시 '+(i+1),company:pick(S.settings.companies.slice(0,8)),tenure,entry,demo:true,at:now-dayAgo*86400000-Math.floor(r()*80000000)};
-    S.users.push(u);
-    S.settings.agendas.forEach(a=>{
-      if(r()<0.22)return;
-      const b=bias[a.id].slice();const senior=ti>=3;const junior=ti===0;
-      if(senior){if(a.id==='a8'){b[0]+=4;b[2]-=2;}if(a.id==='a3'){b[2]+=3;}if(a.id==='a6'){b[0]+=3;}if(a.id==='a5'){b[2]+=2;}}
-      if(junior){if(a.id==='a5'){b[0]+=3;}if(a.id==='a8'){b[2]+=2;}if(a.id==='a1'){b[0]+=2;}}
-      if(entry==='경력 입사'&&a.id==='a10'){b[2]+=2;}
-      const st=['agree','unsure','disagree'][wpick(b.map(x=>Math.max(1,x)))];
-      let reason='';const pool=R[a.id][st];
-      if(pool&&r()<0.4){const cand=pool[Math.floor(r()*pool.length)];if(!S.votes.some(x=>x.aid===a.id&&x.reason===cand)||r()<0.2)reason=cand;}
-      S.votes.push({id:u.id+'_'+a.id,uid:u.id,aid:a.id,stance:st,reason,hidden:false,at:u.at+Math.floor(r()*3600000)});
-      if(r()<0.28){const c=SENT[a.id][Math.floor(r()*SENT[a.id].length)];if(!S.sentences.some(x=>x.aid===a.id&&x.body===c)||r()<0.3)S.sentences.push({id:'s_'+u.id+'_'+a.id,uid:u.id,aid:a.id,body:c,hidden:false,at:u.at+3600000});}
-    });
-    if(i<9){const IDEAS=[['t1','개정 초안을 처음부터 완성본으로 내지 말고, "버전 0.1"을 공개해서 구성원 댓글을 받아 가며 0.2, 0.3으로 올려 가면 좋겠어요. 개정 과정 자체가 SKMS 실천이 되도록.'],['t1','관계사별로 "SKMS 대화 모임"을 10명 단위로 열고, 거기서 나온 문장을 모아 개정팀이 선별하는 상향식 과정을 제안해요. 이 사이트가 그 도구가 될 수 있겠네요.'],['t2','분기 리뷰에 "이번 분기 우리 팀의 SKMS 순간" 한 장면을 적는 칸을 넣으면 어떨까요. 평가가 아니라 기록으로.'],['t2','신입 온보딩 마지막 날에 "내가 다시 쓴 SKMS 한 줄"을 발표하게 하고, 그 문장을 1년 뒤 다시 보여 주기.'],['t3','AI로 회의록을 만들 때 "이 결정은 구성원 행복과 이해관계자 행복 중 무엇을 우선했나"를 자동으로 한 줄 요약하게 해 보면 어떨까요.'],['t3','SUPEX를 "더 오래"가 아니라 "더 똑똑하게"로 재정의하는 실험: AI로 절약한 시간을 어디에 썼는지 팀별로 공유하기.'],['t0','SKMS를 한 페이지로 줄인 버전과 원문을 나란히 두고, 어느 쪽이 더 와닿는지 투표해 보고 싶어요.'],['t1','개정안 확정 전에 리더들이 먼저 "이 문장을 내 의사결정에 어떻게 쓸 것인가"를 써 보게 하는 단계를 넣으면 좋겠어요.'],['t2','회의 시작할 때 30초, 오늘 안건과 SKMS 원칙 하나를 연결해 말하는 습관. 제도보다 의식(ritual)이 오래 갑니다.']];const [tp,bd]=IDEAS[i];S.ideas.push({id:'i_'+u.id,uid:u.id,topic:tp,body:bd,hidden:false,pinned:i===0,at:u.at+9000000});}
-    if(r()<0.3){const c=SENT.final[Math.floor(r()*SENT.final.length)];if(!S.sentences.some(x=>x.aid==='final'&&x.body===c)||r()<0.3)S.sentences.push({id:'s_'+u.id+'_final',uid:u.id,aid:'final',body:c,hidden:false,at:u.at+7200000});}
-  }
-  S.votes.filter(v=>v.reason).forEach(v=>{const k=Math.floor(r()*8);for(let j=0;j<k;j++)S.likes.push({tid:v.id,uid:'demo'+Math.floor(r()*n)});});
-  S.sentences.forEach(s=>{const k=Math.floor(r()*10);for(let j=0;j<k;j++)S.likes.push({tid:s.id,uid:'demo'+Math.floor(r()*n)});});
-  S.ideas.forEach(it=>{const k=Math.floor(r()*14);for(let j=0;j<k;j++)S.likes.push({tid:it.id,uid:'demo'+Math.floor(r()*n)});});
-  const CM=['이거 좋네요. 우리 회사에서 먼저 해 볼 수 있을 것 같아요.','현실적으로 시간이 문제일 것 같은데, 분기 1회면 가능하겠어요.','비슷한 걸 예전에 해 봤는데 리더가 안 하면 금방 사라지더라고요. 리더부터.','댓글로 응원합니다. 개정팀이 꼭 봤으면.'];
-  S.ideas.slice(0,6).forEach((it,ix)=>{const k=1+Math.floor(r()*3);for(let j=0;j<k;j++){const uid='demo'+Math.floor(r()*n);const isIdea=j===0&&ix%2===0;S.comments.push({id:'c_'+it.id+'_'+j,uid,ideaId:it.id,kind:isIdea?'idea':'comment',body:isIdea?['여기에 덧붙이면, 버전마다 "무엇이 바뀌었고 왜 바뀌었는지"를 한 장으로 같이 공개하면 신뢰가 생길 것 같아요.','덧붙여서: 관계사별 모임 결과를 이 사이트의 회차로 나눠 받으면 비교까지 자동으로 되겠네요.','덧붙이는 아이디어: 그 장면을 사진 한 장으로 남겨 연말에 모아 보는 것도 좋겠어요.'][ix%3]:CM[(ix+j)%CM.length],hidden:false,at:it.at+3600000*(j+1)});}});
-}
 
 /* ---------- utils ---------- */
 const $=(s,el)=>(el||document).querySelector(s);
@@ -485,7 +430,7 @@ const fmt=t=>{const d=new Date(t);return `${d.getMonth()+1}.${d.getDate()}`;};
 const who=u=>u?`${esc(u.tenure||'')} · ${esc(u.company||'')}`:'';
 function hash32(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
 async function makeUid(email){const e=email.trim().toLowerCase();try{if(crypto&&crypto.subtle){const buf=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('skms-voice|'+e));return 'u_'+Array.from(new Uint8Array(buf)).slice(0,14).map(b=>b.toString(16).padStart(2,'0')).join('')+'_'+C;}}catch(err){}return 'u_'+hash32(e).toString(16)+hash32(e.split('').reverse().join('')).toString(16)+'_'+C;}
-function orderedAgendas(){const list=activeAgendas();if(!S.settings.shuffle||!me)return list;const r=rng(hash32(me.id));const a=list.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function orderedAgendas(){return activeAgendas();}
 const inFilter=(u,f)=>!!u&&(!f.company||u.company===f.company)&&(!f.tenure||u.tenure===f.tenure)&&(!f.entry||u.entry===f.entry);
 function tally(aid,filter){
   const um=umap();
@@ -507,13 +452,14 @@ async function go(v){view=v;await maybeRefresh();render();window.scrollTo({top:0
 function render(){
   const app=$('#app');const on=!!me;
   $('#navAdmin').hidden=!on;$('#navOut').hidden=!on;$('#bnav').hidden=!on||view.name==='detail';
-  const cur={home:'home',detail:'home',results:'results',ours:'ours',ideas:'ideas',idea:'ideas',me:'me',admin:''}[view.name];
+  const cur={home:'home',detail:'home',results:'results',ours:'ours',errc:'errc',ideas:'ideas',idea:'ideas',me:''}[view.name];
   $('#navIdeas').hidden=!S.settings.ideasEnabled;
   $$('#bnav button').forEach(b=>b.setAttribute('aria-current',b.dataset.go===cur?'page':'false'));
   if(!on){renderGate(app);return;}
-  ({home:renderHome,detail:renderDetail,results:renderResults,ours:renderOurs,ideas:renderIdeas,idea:renderIdeaDetail,me:renderMe,admin:renderAdmin})[view.name](app);
+  ({home:renderHome,detail:renderDetail,results:renderResults,ours:renderOurs,errc:renderERRC,ideas:renderIdeas,idea:renderIdeaDetail,me:renderMe,admin:renderAdmin})[view.name](app);
 }
 $('#bnav').onclick=e=>{const b=e.target.closest('[data-go]');if(b)go({name:b.dataset.go});};
+$('#navMyTop').onclick=()=>go({name:'me'});
 $('#navAdmin').onclick=()=>go({name:'admin'});
 $('#navOut').onclick=()=>{me=null;adminOK=false;adminPin='';try{localStorage.removeItem(KEYC+'_me');sessionStorage.removeItem(KEY+'_admin');}catch(e){}gate={step:0,name:'',email:'',company:'',custom:false,tenure:'',entry:'',existing:null};go({name:'home'});};
 
@@ -528,13 +474,13 @@ function renderGate(app){
     app.innerHTML=`<div class="step" style="padding-top:36px">
       <p class="tiny" style="color:var(--blue);font-weight:700">${esc(S.settings.name||'SKMS 아고라')}</p>
       <h1 style="margin-top:6px">SKMS에 대해<br>어떻게 생각하세요?</h1>
-      <p class="muted" style="margin-top:12px;font-size:1.02rem">열 가지 생각거리에 동의하는지 답하고, 그 주제로 나만의 SKMS 한 줄을 남겨 주세요. 구성원 전체의 생각은 답한 뒤 바로 볼 수 있어요.</p>
+      <p class="muted" style="margin-top:12px;font-size:1.02rem">열 가지 생각거리에 답하고, 나만의 SKMS 한 줄을 남겨 주세요. 구성원 전체의 생각은 답한 뒤 바로 볼 수 있어요.</p>
       ${S.settings.notice?`<div class="banner">${esc(S.settings.notice)}</div>`:''}
       <div style="display:flex;flex-direction:column;gap:14px;margin-top:26px">
         <div class="field"><label for="gName">이름</label><input id="gName" value="${esc(gate.name)}" placeholder="홍길동" maxlength="20" autocomplete="name"></div>
         <div class="field"><label for="gEmail">회사 이메일</label><input id="gEmail" type="email" value="${esc(gate.email)}" placeholder="name@sk.com" autocomplete="email" inputmode="email"><span class="tiny" id="gEmailHint"></span></div>
       </div>
-      <p class="tiny" style="margin-top:14px">회원가입 없이 바로 시작해요. 다음에 같은 이메일로 들어오면 이전 답을 이어서 볼 수 있어요. 이메일은 암호화된 값으로만 저장되고, 이름은 관리자에게만 보여요. 결과는 항상 5명 이상 묶음으로만 보여요.</p>
+      <p class="tiny" style="margin-top:14px">회원가입 없이 바로 시작해요. 다음에 같은 이메일로 들어오면 이전 답을 이어서 볼 수 있어요.</p>
     </div>${cta('다음',false)}`;
     const chk=()=>{const em=$('#gEmail').value.trim();const valid=/^\S+@\S+\.\S+$/.test(em);const dok=!valid||domainOk(em);$('#gEmailHint').textContent=valid&&!dok?'허용된 회사 이메일 주소가 아니에요':'';$('#gNext').disabled=!($('#gName').value.trim()&&valid&&dok);};
     $('#gName').oninput=chk;$('#gEmail').oninput=chk;chk();
@@ -609,17 +555,17 @@ function renderHome(app){
     <div class="hero">
       ${C!=='main'||S.settings.name!=='SKMS 아고라'?`<p class="tiny" style="color:var(--blue);font-weight:700;margin-bottom:6px">${esc(S.settings.name)}</p>`:''}
       <h1>${first?`${esc(me.name)}님, 어떤 생각이<br>가장 먼저 눈에 들어오세요?`:!all?`${esc(me.name)}님, ${list.length}개 중<br>${done}개에 답하셨어요`:`${esc(me.name)}님,<br>모두 답하셨어요. 고마워요.`}</h1>
-      <p>${first?'궁금한 것부터 눌러 보세요. 순서는 상관없어요.':!all?'남은 것도 한 번 눌러 보세요. 이유와 한 줄은 안 써도 괜찮아요.':fin?'생각이 바뀌면 언제든 다시 눌러 바꿀 수 있어요.':'마지막으로, 종합해서 한 줄만 남겨 주세요.'}</p>
+      <p>${first?'궁금한 것부터 눌러 보세요. 순서는 상관없어요.':!all?'남은 것도 한 번 눌러 보세요. 이유 작성은 안 해도 괜찮아요.':fin?'생각이 바뀌면 언제든 다시 눌러 바꿀 수 있어요.':'마지막으로, 종합해서 한 줄만 남겨 주세요.'}</p>
       <div class="prog" aria-label="진행률"><i style="width:${pct(done,list.length)}%"></i></div>
     </div>
     ${S.settings.notice?`<div class="banner" style="margin:0 0 14px">${esc(S.settings.notice)}</div>`:''}
     ${isClosed()?`<div class="banner" style="margin:0 0 14px">참여가 마감됐어요. 결과는 계속 볼 수 있어요.</div>`:''}
-    ${demoN?`<p class="tiny" style="margin:-4px 0 10px">지금 보이는 숫자는 화면 확인용 예시 응답 ${demoN}명분이에요. 관리 화면에서 지울 수 있어요.</p>`:''}
+    ${demoN?`<p class="tiny" style="margin:-4px 0 10px">지금 보이는 숫자는 화면 확인용 예시 응답 ${demoN}명분이에요.</p>`:''}
     ${!list.length?'<div class="empty">아직 게시된 생각거리가 없어요.</div>':''}
     <div class="agendas">${list.map(a=>{const v=myVote(a.id);const t=tally(a.id);const showRes=v||S.settings.showResultsBeforeVote;return `<button type="button" class="ag ${v?'done':''}" data-a="${a.id}">
         ${v?'':'<span class="newdot" aria-hidden="true"></span>'}
         <div><div class="t">${esc(a.tag)}</div><div class="s">${esc(a.statement)}</div></div>
-        <div>${showRes&&t.n>=MIN_N?`<div class="big"><b class="num">${t.pa}%</b><span>동의 · ${t.n}명</span></div>`+miniHtml(t):''}<div class="foot"><span>${showRes&&t.n>=MIN_N?'':`${t.n}명 참여`}</span>${v?`<span class="mark ${v.stance}">${SLABEL[v.stance]}${mySentence(a.id)?' · 한 줄 ✓':''}</span>`:'<span>탭해서 답하기</span>'}</div></div>
+        <div>${showRes&&t.n>=MIN_N?`<div class="big"><b class="num">${t.pa}%</b><span>동의 · ${t.n}명</span></div>`+miniHtml(t):''}<div class="foot"><span>${showRes&&t.n>=MIN_N?'':`${t.n}명 참여`}</span>${v?`<span class="mark ${v.stance}">${SLABEL[v.stance]}</span>`:'<span>탭해서 답하기</span>'}</div></div>
       </button>`;}).join('')}</div>
     <button type="button" class="final" id="goFinal"><b>${fin?'내가 남긴 종합 한 줄':'그래서, 내가 생각하는 SKMS는 ___'}</b><span>${fin?esc(fin.body):all?'열 가지를 다 보셨으니, 종합해서 한 줄만.':'생각거리를 몇 개 보고 나서 써도 좋아요.'}</span></button>
   </div>`;
@@ -627,20 +573,20 @@ function renderHome(app){
   $('#goFinal').onclick=()=>go({name:'detail',aid:'final',phase:'line'});
 }
 
-/* ---------- detail ---------- */
+/* ---------- detail (설문 진행 및 결과) ---------- */
 function renderDetail(app){
   const a=agendaById(view.aid);if(!a){go({name:'home'});return;}
   const isFinal=a.id==='final';
   const v=isFinal?null:myVote(a.id);
-  const list=orderedAgendas();const idx=list.findIndex(x=>x.id===a.id);
-  const nextUn=list.find((x,i)=>i>idx&&!myVote(x.id))||list.find(x=>!myVote(x.id));
+  const list=orderedAgendas();
+  const idx=list.findIndex(x=>x.id===a.id);
   const closed=isClosed();
-  const stepBar=k=>`<div class="steps" aria-hidden="true">${[1,2,3].map(i=>`<i class="${i<=k?'on':''}"></i>`).join('')}</div>`;
-  const head=isFinal?`<button class="back" id="back" type="button">홈</button><p class="d-ctx">종합</p>`
+
+  const head=isFinal?`<button class="back" id="back" type="button">홈</button><p class="d-ctx">종합 정리</p>`
    :`<button class="back" id="back" type="button">홈</button><p class="d-ctx">${esc(a.tag)} · ${idx+1}/${list.length}</p><div class="d-st">“${esc(a.statement)}”</div><p class="d-ctx">${esc(a.context)}</p>`;
 
   if(view.phase==='ask'){
-    app.innerHTML=`<div class="step">${head}${stepBar(1)}
+    app.innerHTML=`<div class="step">${head}
       ${closed?'<div class="banner">참여가 마감되어 답을 바꿀 수 없어요.</div>':''}
       <h3 style="margin-top:22px">어떻게 생각하세요?</h3>
       <div class="stances">${['agree','unsure','disagree'].map(s=>`<button type="button" class="stance ${v&&v.stance===s?'on':''}" data-s="${s}" ${closed?'disabled':''}>${STANCES[s]}<small>${s==='agree'?'대체로 그렇다':s==='unsure'?'판단이 서지 않는다':'대체로 아니다'}</small></button>`).join('')}</div>
@@ -649,76 +595,83 @@ function renderDetail(app){
     $('#back').onclick=()=>go({name:'home'});
     $$('.stance').forEach(b=>b.onclick=()=>{view.stance=b.dataset.s;view.phase='why';render();});
     const tr=$('#toRes');if(tr)tr.onclick=()=>{view.phase='result';render();};
+
   }else if(view.phase==='why'){
     const st=view.stance;
-    app.innerHTML=`<div class="step">${head}${stepBar(2)}
+    app.innerHTML=`<div class="step">${head}
       <div class="why"><p class="tiny" style="color:var(--blue);font-weight:700">${STANCES[st]}</p>
-        <h3 style="margin-top:4px">왜 그렇게 생각하세요?</h3><p class="tiny" style="margin-bottom:12px">한 줄이면 충분해요. 건너뛰어도 괜찮아요.</p>
-        <textarea id="why" maxlength="200" placeholder="예) ${esc(REASON_HINTS[st][0])}">${esc(v&&v.stance===st?v.reason:'')}</textarea>
+        <h3 style="margin-top:4px">왜 그렇게 생각하세요?</h3><p class="tiny" style="margin-bottom:12px">자유롭게 한 줄로 작성해 주세요.</p>
+        <textarea id="why" maxlength="200" placeholder="이유를 작성해 주세요.">${esc(v&&v.stance===st?v.reason:'')}</textarea>
         <div class="cnt"><span id="whyCnt">0</span>/200</div>
-        <div class="samples">${REASON_HINTS[st].map(h=>`<button type="button" data-h="${esc(h)}">${esc(h)}</button>`).join('')}</div></div></div>
-    <div class="cta"><div class="in"><button class="btn sub" id="skip" type="button" style="flex:0 0 38%">건너뛰기</button><button class="btn" id="submit" type="button">다음</button></div></div>`;
+      </div>
+    </div>
+    <div class="cta"><div class="in"><button class="btn sub" id="whyBack" type="button" style="flex:0 0 38%">뒤로</button><button class="btn" id="submit" type="button">다음</button></div></div>`;
+
     const ta=$('#why');const cnt=()=>{$('#whyCnt').textContent=ta.value.length;};ta.oninput=cnt;cnt();
-    $$('.samples button').forEach(b=>b.onclick=()=>{ta.value=(ta.value?ta.value+' ':'')+b.dataset.h;cnt();ta.focus();});
+    $('#whyBack').onclick=()=>{view.phase='ask';render();};
+
     const commit=async reason=>{
       const ix=S.votes.findIndex(x=>x.uid===me.id&&x.aid===a.id);
       const rec={id:me.id+'_'+a.id,uid:me.id,aid:a.id,stance:st,reason,hidden:ix>=0?S.votes[ix].hidden:false,at:Date.now()};
       if(ix>=0)S.votes[ix]=rec;else S.votes.push(rec);
-      view.phase='line';render();await DB.vote(rec);
+      await DB.vote(rec);
+
+      // 마지막 문항일 경우에만 종합 한 줄 쓰기("final")로 이동, 그 외에는 다음 문항의 ask 화면으로 이동
+      if(idx < list.length - 1){
+        const nextAg = list[idx + 1];
+        go({name:'detail', aid: nextAg.id, phase: myVote(nextAg.id)?'result':'ask'});
+      } else {
+        go({name:'detail', aid:'final', phase:'line'});
+      }
     };
-    $('#skip').onclick=()=>commit('');$('#submit').onclick=()=>commit(ta.value.trim());
-    $('#back').onclick=()=>{view.phase='ask';render();};
-    setTimeout(()=>ta.focus(),80);
+    $('#submit').onclick=()=>commit(ta.value.trim());
+
   }else if(view.phase==='line'){
     const msx=mySentence(a.id);const parts=a.fill.split('___');
-    app.innerHTML=`<div class="step">${head}${isFinal?'':stepBar(3)}
-      <div class="why"><p class="tiny" style="color:var(--blue);font-weight:700">${isFinal?'마지막 한 줄':'이 주제로, 나만의 SKMS 한 줄'}</p>
+    app.innerHTML=`<div class="step">${head}
+      <div class="why"><p class="tiny" style="color:var(--blue);font-weight:700">종합 한 줄</p>
         <h3 style="margin-top:4px">${esc(a.prompt)}</h3>
         <div class="fill">${esc(parts[0])}<em>___</em>${esc(parts[1]||'')}</div>
-        <p class="tiny" style="margin:10px 0 12px">빈칸만 채워도 되고, 문장을 통째로 새로 써도 돼요. ${isFinal?'':'건너뛰어도 괜찮아요.'}</p>
+        <p class="tiny" style="margin:10px 0 12px">나만의 SKMS 한 줄을 남겨주세요.</p>
         <textarea id="line" maxlength="120" style="min-height:90px" placeholder="${esc(a.fill.replace('___','…'))}">${esc(msx?msx.body:'')}</textarea>
         <div class="cnt"><span id="lineCnt">0</span>/120</div></div></div>
-    <div class="cta"><div class="in">${isFinal?'':`<button class="btn sub" id="skip" type="button" style="flex:0 0 38%">건너뛰기</button>`}<button class="btn" id="submit" type="button">${isFinal?'남기기':'남기고 결과 보기'}</button></div></div>`;
+    <div class="cta"><div class="in"><button class="btn" id="submit" type="button">제출하고 완료하기</button></div></div>`;
+
     const ta=$('#line');const cnt=()=>{$('#lineCnt').textContent=ta.value.length;};ta.oninput=cnt;cnt();
     ta.onfocus=()=>{if(!ta.value){ta.value=parts[0];cnt();}};
-    const done=()=>{if(isFinal){toast('남겼어요');go({name:'ours'});}else{view.phase='result';render();}};
-    $('#submit').onclick=async()=>{let body=ta.value.trim();if(body===parts[0].trim())body='';if(!body&&isFinal){toast('한 줄만 적어 주세요');return;}
+    const done=()=>{toast('제출이 완료되었습니다.');go({name:'ours'});};
+
+    $('#submit').onclick=async()=>{let body=ta.value.trim();if(body===parts[0].trim())body='';if(!body){toast('한 줄을 적어 주세요');return;}
       const ix=S.sentences.findIndex(s=>s.uid===me.id&&s.aid===a.id);
-      if(body){const rec={id:'s_'+me.id+'_'+a.id,uid:me.id,aid:a.id,body,hidden:ix>=0?S.sentences[ix].hidden:false,at:Date.now()};if(ix>=0)S.sentences[ix]=rec;else S.sentences.push(rec);done();await DB.sentence(rec);}
-      else if(ix>=0){const id=S.sentences[ix].id;S.sentences.splice(ix,1);done();await DB.delSentence(id);}
-      else done();};
-    const sk=$('#skip');if(sk)sk.onclick=done;
-    $('#back').onclick=()=>isFinal?go({name:'home'}):(view.phase='why',render());
-    setTimeout(()=>ta.focus(),80);
+      const rec={id:'s_'+me.id+'_'+a.id,uid:me.id,aid:a.id,body,hidden:ix>=0?S.sentences[ix].hidden:false,at:Date.now()};
+      if(ix>=0)S.sentences[ix]=rec;else S.sentences.push(rec);
+      done();await DB.sentence(rec);};
+    $('#back').onclick=()=>go({name:'home'});
+
   }else{
     const t=tally(a.id);const mineP=v?t['p'+v.stance[0]]:0;
-    const canSee=S.settings.reasonsPublic||adminOK;const canSeeS=S.settings.sentencesPublic||adminOK;
+    const canSee=S.settings.reasonsPublic||adminOK;
     const um=umap();const tab=view.tab||(v?v.stance:'agree');
     const reasons=t.votes.filter(x=>x.reason&&!x.hidden&&x.stance===tab).sort((x,y)=>(y.uid===me.id)-(x.uid===me.id)||likeCnt(y.id)-likeCnt(x.id)||y.at-x.at);
-    const sents=S.sentences.filter(s=>s.aid===a.id&&!s.hidden).sort((x,y)=>(y.uid===me.id)-(x.uid===me.id)||likeCnt(y.id)-likeCnt(x.id)||y.at-x.at);
-    const msx=mySentence(a.id);
-    const mood=t.pa>=60?'동의가 뚜렷한 편이에요.':t.pd>=50?'동의하지 않는 쪽이 더 많아요.':Math.abs(t.pa-t.pd)<=12?'의견이 팽팽하게 갈려요.':'아직 한쪽으로 기울지 않았어요.';
+    const nextAg=list[idx+1];
+
     app.innerHTML=`<div class="step">${head}
       <div class="res-head" style="margin-top:24px">
-        ${t.n>=MIN_N?`<div class="big num">${mineP}%<span>가 ${esc(me.name)}님과 같은 생각</span></div><p>${t.n}명이 답했어요. ${mood}</p>`:`<div class="big">답을 남겼어요</div><p>아직 ${t.n}명이 답했어요. 5명이 넘으면 비율을 보여 드릴게요.</p>`}
+        ${t.n>=MIN_N?`<div class="big num">${mineP}%<span>가 ${esc(me.name)}님과 같은 생각</span></div><p>${t.n}명이 답했어요.</p>`:`<div class="big">답을 남겼어요</div><p>아직 ${t.n}명이 답했어요. 5명이 넘으면 비율을 보여 드릴게요.</p>`}
         ${t.n>=MIN_N?barHtml(t)+`<div class="legend"><span><i style="background:var(--agree)"></i>동의 <b class="num">${t.pa}%</b></span><span><i style="background:var(--unsure)"></i>모르겠음 <b class="num">${t.pu}%</b></span><span><i style="background:var(--disagree)"></i>비동의 <b class="num">${t.pd}%</b></span></div>`:''}
       </div>
-      ${v?`<div class="mine-box"><div class="k">내 답 · ${SLABEL[v.stance]}</div>${v.reason?`<p>${esc(v.reason)}</p>`:'<p class="tiny" style="margin-top:2px">이유는 아직 안 남겼어요</p>'}${msx?`<p style="margin-top:6px">✎ ${esc(msx.body)}</p>`:''}<div class="x"><button type="button" class="btn xs sub" id="change">생각 바꾸기</button><button type="button" class="btn xs sub" id="editWhy">${v.reason?'이유 고치기':'이유 남기기'}</button><button type="button" class="btn xs sub" id="editLine">${msx?'한 줄 고치기':'한 줄 남기기'}</button></div></div>`:''}
+      ${v?`<div class="mine-box"><div class="k">내 답 · ${SLABEL[v.stance]}</div>${v.reason?`<p>${esc(v.reason)}</p>`:'<p class="tiny" style="margin-top:2px">이유는 작성하지 않았습니다.</p>'}<div class="x"><button type="button" class="btn xs sub" id="change">생각 바꾸기</button></div></div>`:''}
       <div class="tabs" role="tablist">${['agree','unsure','disagree'].map(s=>`<button type="button" role="tab" data-t="${s}" aria-selected="${tab===s}">${s==='agree'?'동의 이유':s==='unsure'?'모르겠는 이유':'비동의 이유'}</button>`).join('')}</div>
       ${canSee?(reasons.length?`<div class="reasons">${reasons.map(x=>`<div class="rs ${x.uid===me.id?'mine':''}"><p>${esc(x.reason)}</p><div class="m"><span>${x.uid===me.id?'내 이유':who(um[x.uid])} · ${fmt(x.at)}</span><button type="button" class="like ${liked(x.id)?'on':''}" data-like="${x.id}">공감 <span class="num">${likeCnt(x.id)}</span></button></div></div>`).join('')}</div>`:`<div class="empty">아직 이 입장의 이유가 없어요.</div>`)
-      :`<div class="lock"><span>🔒</span><span>다른 사람의 이유는 지금 관리자만 볼 수 있어요. 공개로 바뀌면 여기서 볼 수 있어요.</span></div>`}
-      <div class="sec"><h2>${esc(a.prompt)}</h2><span class="tiny">${sents.length}개</span></div>
-      ${canSeeS?(sents.length?`<div class="reasons">${sents.map(s=>`<div class="rs q ${s.uid===me.id?'mine':''}"><p>${esc(s.body)}</p><div class="m"><span>${s.uid===me.id?'내 한 줄':who(um[s.uid])}</span><button type="button" class="like ${liked(s.id)?'on':''}" data-like="${s.id}">공감 <span class="num">${likeCnt(s.id)}</span></button></div></div>`).join('')}</div>`:`<div class="empty">아직 없어요. 첫 한 줄을 남겨 볼까요?</div>`)
-      :`<div class="lock"><span>🔒</span><span>다른 사람의 한 줄은 지금 관리자만 볼 수 있어요.</span></div>`}
+      :`<div class="lock"><span>🔒</span><span>이유는 지금 관리자만 볼 수 있어요.</span></div>`}
     </div>
-    <div class="cta"><div class="in">${nextUn?`<button class="btn" id="next" type="button">다음 생각거리 →</button>`:`<button class="btn" id="next" type="button">${mySentence('final')?'전체 결과 보기':'종합 한 줄 남기기'}</button>`}</div></div>`;
+    <div class="cta"><div class="in">${nextAg?`<button class="btn" id="next" type="button">다음 생각거리 →</button>`:`<button class="btn" id="next" type="button">종합 한 줄 남기기</button>`}</div></div>`;
+
     $('#back').onclick=()=>go({name:'home'});
-    $$('.tabs [role=tab]').forEach(b=>b.onclick=()=>{view.tab=b.dataset.t;render();});
-    $$('[data-like]').forEach(b=>b.onclick=()=>toggleLike(b.dataset.like));
+    $$('.tabs [role=tab]').forEach(b=>b.onclick=()=>{view.tab=b.dataset.t;render();});$$
+('[data-like]').forEach(b=>b.onclick=()=>toggleLike(b.dataset.like));
     const c=$('#change');if(c)c.onclick=()=>{view.phase='ask';view.tab=null;render();};
-    const ew=$('#editWhy');if(ew)ew.onclick=()=>{view.stance=v.stance;view.phase='why';render();};
-    const el=$('#editLine');if(el)el.onclick=()=>{view.phase='line';render();};
-    $('#next').onclick=()=>nextUn?go({name:'detail',aid:nextUn.id,phase:'ask'}):mySentence('final')?go({name:'results'}):go({name:'detail',aid:'final',phase:'line'});
+    $('#next').onclick=()=>nextAg?go({name:'detail',aid:nextAg.id,phase:'ask'}):go({name:'detail',aid:'final',phase:'line'});
   }
 }
 
@@ -740,7 +693,7 @@ function renderResults(app){
   const byCompany=companyList().map(c=>({c,n:new Set(S.votes.filter(v=>(um[v.uid]||{}).company===c).map(v=>v.uid)).size})).filter(x=>x.n).sort((x,y)=>y.n-x.n);
   const maxC=Math.max(...byCompany.map(x=>x.n),1);
   app.innerHTML=`<div class="step">
-    <div class="hero" style="padding-bottom:0"><h1>우리는 SKMS를<br>이렇게 보고 있어요</h1><p>${n}명의 답을 모았어요. 5명 미만 집단은 가려서 보여요.</p></div>
+    <div class="hero" style="padding-bottom:0"><h1>우리는 SKMS를<br>이렇게 보고 있어요</h1><p>${n}명의 답을 모았어요.</p></div>
     <div class="filters">
       <select id="fc"><option value="">모든 회사</option>${companyList().map(c=>`<option ${f.company===c?'selected':''}>${esc(c)}</option>`).join('')}</select>
       <select id="ft"><option value="">모든 연차</option>${TENURES.map(c=>`<option ${f.tenure===c?'selected':''}>${esc(c)}</option>`).join('')}</select>
@@ -749,68 +702,91 @@ function renderResults(app){
     </div>
     ${!rows.length?`<div class="empty" style="margin-top:16px">이 조건에서는 아직 결과를 보여 드릴 만큼 답이 모이지 않았어요.</div>`:`
     <div class="insights">
-      ${contested?`<div class="ins hero"><div class="k">가장 팽팽한 주제</div><div class="v">“${esc(contested.a.statement)}”</div><div class="s"><b style="color:#8DB8FF">동의 ${contested.t.pa}%</b> vs <b style="color:#FF9A8B">비동의 ${contested.t.pd}%</b> · 모르겠음 ${contested.t.pu}% · ${contested.t.n}명</div></div>`:''}
+      ${contested?`<div class="ins hero"><div class="k">가장 팽팽한 주제</div><div class="v">“${esc(contested.a.statement)}”</div><div class="s"><b style="color:#FFA89B">동의 ${contested.t.pa}%</b> vs <b>비동의 ${contested.t.pd}%</b></div></div>`:''}
       ${topAgree?`<div class="ins blue"><div class="k">가장 많이 동의</div><div class="v num">${topAgree.t.pa}%<small>동의</small></div><div class="s">${esc(topAgree.a.tag)} · ${esc(topAgree.a.statement)}</div></div>`:''}
       ${topDis&&topDis!==topAgree?`<div class="ins red"><div class="k">가장 많이 비동의</div><div class="v num">${topDis.t.pd}%<small>비동의</small></div><div class="s">${esc(topDis.a.tag)} · ${esc(topDis.a.statement)}</div></div>`:''}
-      ${spread&&spread.d>=0?`<div class="ins" style="grid-column:1/-1"><div class="k">연차 간 온도차가 가장 큰 주제</div><div class="v num">${spread.d}<small>%p 차이</small></div><div class="s">${esc(spread.a.tag)} · ${esc(spread.a.statement)}<br><span class="tiny">${TENURES.map((l,i)=>spread.cells[i]==null?'':`${l} ${spread.cells[i]}%`).filter(Boolean).join(' · ')}</span></div></div>`:''}
     </div>
 
-    <div class="sec"><h2>합의 지도</h2><span class="tiny">동의가 많을수록 위 · 탭하면 이유</span></div>
+    <div class="sec"><h2>합의 지도</h2><span class="tiny">동의가 많을수록 오른쪽</span></div>
     <div class="dmap"><div class="hd"><span>← 동의하지 않아요</span><span>동의해요 →</span></div>
-      ${sorted.map(({a,t})=>`<button type="button" class="drow" data-a="${a.id}"><div class="lab"><span>${esc(a.statement)}</span><span class="tg">${t.n}명 · 모르겠음 ${t.pu}%</span></div>
+      ${sorted.map(({a,t})=>`<button type="button" class="drow" data-a="${a.id}"><div class="lab"><span>${esc(a.statement)}</span><span class="tg">${t.n}명</span></div>
         <div class="tr"><i class="l" style="width:${t.pd/2}%"></i><i class="r" style="width:${t.pa/2}%"></i><span class="pl" style="right:calc(50% + ${t.pd/2}%)">${t.pd}%</span><span class="pr" style="left:calc(50% + ${t.pa/2}%)">${t.pa}%</span></div></button>`).join('')}
     </div>
 
-    <div class="sec"><h2>연차별 동의율</h2><span class="tiny">진할수록 동의가 많아요</span></div>
-    <div class="heat" style="grid-template-columns:minmax(70px,1.1fr) repeat(${TENURES.length},1fr)">
-      <div></div>${TENURES.map(l=>`<div class="hh">${esc(l.replace('년 미만','년↓').replace('년 이상','년↑'))}</div>`).join('')}
-      ${heat.map(h=>`<div class="hl" title="${esc(h.a.statement)}">${esc(h.a.tag)}</div>${h.cells.map(c=>c==null?`<div class="hc na">–</div>`:`<div class="hc ${c>=55?'dk':''}" style="background:rgba(49,130,246,${(0.08+c/100*0.92).toFixed(2)})" title="동의 ${c}%">${c}</div>`).join('')}`).join('')}
-    </div>
-    <div class="hscale"><span>0%</span><i></i><span>100% 동의</span></div>
-
-    ${entryGap?`<div class="sec"><h2>신입 vs 경력, 가장 다른 주제</h2></div>
-    <p style="font-weight:600;font-size:.95rem">${esc(entryGap.a.statement)}</p>
-    <div class="pair"><div class="pc"><div class="k">${ENTRIES[0]}</div><div class="v num">${entryGap.p1}%<small>동의</small></div></div><div class="pc"><div class="k">${ENTRIES[1]}</div><div class="v num">${entryGap.p2}%<small>동의</small></div></div></div>`:''}
-
-    <div class="sec"><h2>가장 공감받은 이유</h2></div>
-    ${canSee?(topReasons.length?`<div class="reasons">${topReasons.map(x=>{const a=agendaById(x.aid)||{};return `<div class="rs q"><p>“${esc(x.reason)}”</p><div class="m"><span>${esc(a.tag||'')}에 <b>${SLABEL[x.stance]}</b> · ${who(um[x.uid])}</span><span>공감 ${likeCnt(x.id)}</span></div></div>`;}).join('')}</div>`:'<div class="empty">아직 남긴 이유가 없어요.</div>'):`<div class="lock"><span>🔒</span><span>이유는 지금 관리자만 볼 수 있어요.</span></div>`}
-
     <div class="sec"><h2>회사별 참여</h2></div>
-    <div class="cbars">${byCompany.map(x=>`<div class="cb"><span>${esc(x.c)}</span><div class="tk"><i style="width:${x.n/maxC*100}%"></i></div><span class="n num">${x.n}명</span></div>`).join('')}</div>
-    <div style="margin-top:24px"><button class="btn sub" id="toOurs" type="button">구성원이 다시 쓴 SKMS 보기</button></div>`}
+    <div class="cbars">${byCompany.map(x=>`<div class="cb"><span>${esc(x.c)}</span><div class="tk"><i style="width:${x.n/maxC*100}%"></i></div><span class="n num">${x.n}명</span></div>`).join('')}</div>`}
   </div>`;
   $('#fc').onchange=e=>{ovFilter.company=e.target.value;render();};
   $('#ft').onchange=e=>{ovFilter.tenure=e.target.value;render();};
   $('#fe').onchange=e=>{ovFilter.entry=e.target.value;render();};
-  const fx=$('#fx');if(fx)fx.onclick=()=>{ovFilter={company:'',tenure:'',entry:''};render();};
-  $$('.drow').forEach(b=>b.onclick=()=>go({name:'detail',aid:b.dataset.a,phase:myVote(b.dataset.a)?'result':'ask'}));
-  const to=$('#toOurs');if(to)to.onclick=()=>go({name:'ours'});
+  const fx=$('#fx');if(fx)fx.onclick=()=>{ovFilter={company:'',tenure:'',entry:''};render();};   $$('.drow').forEach(b=>b.onclick=()=>go({name:'detail',aid:b.dataset.a,phase:myVote(b.dataset.a)?'result':'ask'}));
 }
 
-/* ---------- ours ---------- */
+/* ---------- ours (우리의 SKMS: 종합 한 줄 피드만 표출) ---------- */
 function renderOurs(app){
   const um=umap();const canSee=S.settings.sentencesPublic||adminOK;
-  const themes=[FINAL,...activeAgendas()];
-  const total=S.sentences.filter(s=>!s.hidden).length;
-  const expanded=view.expanded||{};
+  const finalAg = FINAL;
+  const all=S.sentences.filter(s=>s.aid===finalAg.id&&!s.hidden).sort((x,y)=>likeCnt(y.id)-likeCnt(x.id)||y.at-x.at);
+  const msx=mySentence(finalAg.id);
+
   app.innerHTML=`<div class="step">
-    <div class="hero" style="padding-bottom:0"><h1>구성원이 다시 쓴<br>SKMS</h1><p>주제별로 빈칸을 채운 ${total}개의 문장이에요. 공감이 많은 순으로 보여요.</p></div>
-    ${themes.map(a=>{
-      const all=S.sentences.filter(s=>s.aid===a.id&&!s.hidden).sort((x,y)=>likeCnt(y.id)-likeCnt(x.id)||y.at-x.at);
-      const msx=mySentence(a.id);const open=expanded[a.id];const show=open?all:all.slice(0,3);const parts=a.fill.split('___');
-      return `<section class="theme">
-        <div class="hd"><div><div class="tiny" style="font-weight:700;color:var(--blue)">${esc(a.tag)}</div><div class="pr">${esc(parts[0])}<em>___</em>${esc(parts[1]||'')}</div></div><span class="tiny">${all.length}개</span></div>
-        ${canSee?(show.length?`<div class="lst">${show.map(s=>`<div class="sent ${s.uid===me.id?'mine':''}"><p>${esc(s.body)}</p><div class="m"><span>${s.uid===me.id?'내 한 줄':who(um[s.uid])}</span><button type="button" class="like ${liked(s.id)?'on':''}" data-like="${s.id}">공감 <span class="num">${likeCnt(s.id)}</span></button></div></div>`).join('')}</div>${all.length>3?`<button type="button" class="more" data-more="${a.id}">${open?'접기':`${all.length-3}개 더 보기`}</button>`:''}`:`<div class="empty" style="margin-top:10px;padding:16px">아직 없어요. 첫 한 줄을 남겨 주세요.</div>`)
-        :`<div class="lock" style="margin-top:10px"><span>🔒</span><span>지금은 관리자만 볼 수 있어요.${msx?`<br><b>내 한 줄</b> — ${esc(msx.body)}`:''}</span></div>`}
-        ${!isClosed()?`<div class="add"><button type="button" class="btn sm sub" data-edit="${a.id}" style="width:100%">${msx?'내 한 줄 고치기':a.id==='final'?'종합 한 줄 남기기':'이 주제로 내 한 줄 남기기'}</button></div>`:''}
-      </section>`;}).join('')}
+    <div class="hero" style="padding-bottom:0"><h1>구성원이 다시 쓴<br>SKMS</h1><p>구성원들이 남긴 종합 한 줄 소견입니다.</p></div>
+    <section class="theme">
+      <div class="hd"><div><div class="tiny" style="font-weight:700;color:var(--blue)">종합 한 줄</div><div class="pr">내가 생각하는 SKMS는 <em>___</em></div></div><span class="tiny">${all.length}개</span></div>
+      ${canSee?(all.length?`<div class="lst">${all.map(s=>`<div class="sent ${s.uid===me.id?'mine':''}"><p>${esc(s.body)}</p><div class="m"><span>${s.uid===me.id?'내 한 줄':who(um[s.uid])}</span><button type="button" class="like ${liked(s.id)?'on':''}" data-like="${s.id}">공감 <span class="num">${likeCnt(s.id)}</span></button></div></div>`).join('')}</div>`:`<div class="empty" style="margin-top:10px;padding:16px">아직 남긴 한 줄이 없어요.</div>`)
+      :`<div class="lock" style="margin-top:10px"><span>🔒</span><span>관리자 설정에 의해 공개 제한 중입니다.</span></div>`}
+      ${!isClosed()?`<div class="add"><button type="button" class="btn sm sub" id="editFinalLine" style="width:100%">${msx?'내 한 줄 고치기':'종합 한 줄 남기기'}</button></div>`:''}
+    </section>
   </div>`;
   $$('[data-like]').forEach(b=>b.onclick=()=>toggleLike(b.dataset.like));
-  $$('[data-more]').forEach(b=>b.onclick=()=>{view.expanded=Object.assign({},expanded,{[b.dataset.more]:!expanded[b.dataset.more]});render();});
-  $$('[data-edit]').forEach(b=>b.onclick=()=>go({name:'detail',aid:b.dataset.edit,phase:'line'}));
+  const ef=$('#editFinalLine');if(ef)ef.onclick=()=>go({name:'detail',aid:'final',phase:'line'});
 }
 
-/* ---------- ideas: Next SKMS 아이디어 게시판 (제안 → 스레드) ---------- */
+/* ---------- ERRC (신규 탭) ---------- */
+function renderERRC(app){
+  const um=umap();
+  app.innerHTML=`<div class="step">
+    <div class="hero" style="padding-bottom:0"><h1>Next SKMS를 위한<br>ERRC 제안</h1><p>SKMS 실천과 조직문화 혁신을 위해 버릴 것, 높일 것, 새로 시도할 것에 대한 제안입니다.</p></div>
+    ${ERRC_TOPICS.map(item=>{
+      const feeds=S.sentences.filter(s=>s.aid===item.id&&!s.hidden).sort((x,y)=>likeCnt(y.id)-likeCnt(x.id)||y.at-x.at);
+      const myItem = mySentence(item.id);
+      return `<section class="theme">
+        <div class="hd">
+          <div>
+            <div class="tiny" style="font-weight:700;color:var(--blue)">${esc(item.tag)}</div>
+            <div class="pr">${esc(item.title)}</div>
+            <p class="tiny" style="margin-top:4px;color:var(--ink-2)">${esc(item.prompt)}</p>
+          </div>
+          <span class="tiny">${feeds.length}개</span>
+        </div>
+        <div class="lst">${feeds.map(s=>`<div class="sent ${s.uid===me.id?'mine':''}"><p>${esc(s.body)}</p><div class="m"><span>${s.uid===me.id?'내 제안':who(um[s.uid])}</span><button type="button" class="like ${liked(s.id)?'on':''}" data-like="${s.id}">공감 <span class="num">${likeCnt(s.id)}</span></button></div></div>`).join('')}</div>
+        ${!isClosed()?`
+        <div class="compose" style="margin-top:12px;padding:12px">
+          <textarea id="input_${item.id}" rows="2" style="min-height:70px" placeholder="${esc(item.title)}에 대한 제안을 적어주세요.">${esc(myItem?myItem.body:'')}</textarea>
+          <div style="display:flex;justify-content:flex-end;margin-top:8px">
+            <button type="button" class="btn sm" data-errcsubmit="${item.id}">${myItem?'고치기':'등록하기'}</button>
+          </div>
+        </div>`:''}
+      </section>`;
+    }).join('')}
+  </div>`;
+
+  $$('[data-like]').forEach(b=>b.onclick=()=>toggleLike(b.dataset.like));$$
+('[data-errcsubmit]').forEach(b=>b.onclick=async()=>{
+    const aid=b.dataset.errcsubmit;
+    const ta=$('#input_'+aid);
+    const body=ta.value.trim();
+    if(!body){toast('내용을 입력해 주세요.');return;}
+    const ix=S.sentences.findIndex(s=>s.uid===me.id&&s.aid===aid);
+    const rec={id:'s_'+me.id+'_'+aid,uid:me.id,aid,body,hidden:ix>=0?S.sentences[ix].hidden:false,at:Date.now()};
+    if(ix>=0)S.sentences[ix]=rec;else S.sentences.push(rec);
+    toast('등록되었습니다.');
+    render();
+    await DB.sentence(rec);
+  });
+}
+
+/* ---------- ideas ---------- */
 const replyOf=id=>S.comments.filter(c=>c.ideaId===id&&!c.hidden);
 function renderIdeas(app){
   const st=S.settings;const um=umap();const canSee=st.ideasPublic||adminOK;const closed=isClosed();
@@ -821,39 +797,39 @@ function renderIdeas(app){
   const mine=S.ideas.filter(i=>i.uid===me.id);
   const t=topics.find(x=>x.id===cur);
   app.innerHTML=`<div class="step">
-    <div class="hero" style="padding-bottom:0"><h1>Next SKMS를 위한<br>아이디어</h1><p>제안 하나가 하나의 대화방이에요. 제안을 올리거나, 마음에 드는 제안에 들어가 아이디어를 덧붙이고 댓글로 다듬어 주세요.</p></div>
-    <div class="topics"><button type="button" data-topic="" aria-pressed="${!cur}">전체 ${S.ideas.filter(i=>!i.hidden).length}</button>${topics.map(x=>`<button type="button" data-topic="${esc(x.id)}" aria-pressed="${cur===x.id}">${esc(x.title)} ${S.ideas.filter(i=>!i.hidden&&i.topic===x.id).length}</button>`).join('')}</div>
+    <div class="hero" style="padding-bottom:0"><h1>Next SKMS를 위한<br>아이디어</h1><p>마음에 드는 제안에 들어가 의견을 더해 주세요.</p></div>
+    <div class="topics"><button type="button" data-topic="" aria-pressed="${!cur}">전체 ${S.ideas.filter(i=>!i.hidden).length}</button>${topics.map(x=>`<button type="button" data-topic="${esc(x.id)}" aria-pressed="${cur===x.id}">${esc(x.title)}${S.ideas.filter(i=>!i.hidden&&i.topic===x.id).length}</button>`).join('')}</div>
     ${t?`<div class="tdesc"><b>${esc(t.title)}</b><p>${esc(t.desc||'')}</p></div>`:''}
-    ${closed?'<div class="banner">참여가 마감되어 새 제안은 받지 않아요.</div>':view.compose?`
+    ${closed?'<div class="banner">참여가 마감되었습니다.</div>':view.compose?`
     <div class="compose">
       <div class="tiny" style="font-weight:700;color:var(--blue)">새 제안</div>
       <div class="chips" style="margin:10px 0">${topics.map(x=>`<button type="button" class="chip" data-ctopic="${esc(x.id)}" aria-pressed="${(view.ctopic||cur||topics[0]?.id)===x.id}" style="padding:7px 12px;font-size:.88rem">${esc(x.title)}</button>`).join('')}</div>
-      <textarea id="ideaBody" maxlength="600" placeholder="예) 개정 초안을 버전 0.1로 먼저 공개하고 댓글을 받아 가며 올려 가면 어떨까요. 왜냐하면 …">${esc(view.draft||'')}</textarea>
+      <textarea id="ideaBody" maxlength="600" placeholder="제안 내용을 자유롭게 적어주세요.">${esc(view.draft||'')}</textarea>
       <div class="cnt"><span id="ideaCnt">0</span>/600</div>
       <div class="row2"><button type="button" class="btn sm" id="ideaSave">올리기</button><button type="button" class="btn sm sub" id="ideaCancel">취소</button></div>
-      <p class="tiny" style="margin-top:8px">회사·연차와 함께 표시돼요. 이름은 표시되지 않아요.</p>
     </div>`:`<div style="margin-top:14px"><button type="button" class="btn" id="ideaNew">+ 제안 올리기${mine.length?` <span style="font-weight:500;opacity:.8">(내 제안 ${mine.length})</span>`:''}</button></div>`}
     <div class="sec"><h2>${cur?esc(t.title):'모든 제안'}</h2><div class="seg" id="isort"><button type="button" data-s="hot" aria-pressed="${sort==='hot'}">활발한 순</button><button type="button" data-s="new" aria-pressed="${sort==='new'}">최신순</button></div></div>
-    ${!canSee?`<div class="lock"><span>🔒</span><span>다른 사람의 제안은 지금 관리자만 볼 수 있어요.${mine.length?'<br>내 제안은 아래에서 볼 수 있어요.':''}</span></div>${mine.map(i=>ideaCard(i,um)).join('')}`
+    ${!canSee?`<div class="lock"><span>🔒</span><span>관리자 설정에 의해 비공개 처리 중입니다.</span></div>${mine.map(i=>ideaCard(i,um)).join('')}`
       :(all.length?all.map(i=>ideaCard(i,um)).join(''):`<div class="empty">아직 제안이 없어요. 첫 제안을 올려 볼까요?</div>`)}
   </div>`;
   const cnt=()=>{const ta=$('#ideaBody');if(ta)$('#ideaCnt').textContent=ta.value.length;};cnt();
-  $$('[data-topic]').forEach(b=>b.onclick=()=>{view.topic=b.dataset.topic;render();});
-  $$('#isort button').forEach(b=>b.onclick=()=>{view.isort=b.dataset.s;render();});
-  const nw=$('#ideaNew');if(nw)nw.onclick=()=>{view.compose=true;view.ctopic=cur||topics[0]?.id;render();setTimeout(()=>$('#ideaBody')?.focus(),60);};
+  $$('[data-topic]').forEach(b=>b.onclick=()=>{view.topic=b.dataset.topic;render();});$$
+('#isort button').forEach(b=>b.onclick=()=>{view.isort=b.dataset.s;render();});
+  const nw=$('#ideaNew');if(nw)nw.onclick=()=>{view.compose=true;view.ctopic=cur\vert{}\vert{}topics[0]?.id;render();setTimeout(()=>$('#ideaBody')?.focus(),60);};
   const ta=$('#ideaBody');if(ta)ta.oninput=()=>{cnt();view.draft=ta.value;};
-  $$('[data-ctopic]').forEach(b=>b.onclick=()=>{view.ctopic=b.dataset.ctopic;$$('[data-ctopic]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));});
+  $$('[data-ctopic]').forEach(b=>b.onclick=()=>{view.ctopic=b.dataset.ctopic;$$
+('[data-ctopic]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));});
   const cancel=$('#ideaCancel');if(cancel)cancel.onclick=()=>{view.compose=false;view.draft='';render();};
   const sv=$('#ideaSave');if(sv)sv.onclick=async()=>{const body=$('#ideaBody').value.trim();if(body.length<10){toast('열 자 이상 적어 주세요');return;}const topic=$('[data-ctopic][aria-pressed="true"]')?.dataset.ctopic||topics[0]?.id||'t0';
-    const rec={id:'i_'+me.id+'_'+Date.now().toString(36),uid:me.id,topic,body,hidden:false,pinned:false,at:Date.now()};S.ideas.push(rec);view.compose=false;view.draft='';toast('올렸어요. 이제 이 제안이 하나의 대화방이 됐어요');go({name:'idea',id:rec.id});await DB.idea(rec);};
-  $$('[data-like]').forEach(b=>b.onclick=e=>{e.stopPropagation();toggleLike(b.dataset.like);});
-  $$('[data-open]').forEach(el=>el.onclick=()=>go({name:'idea',id:el.dataset.open}));
+    const rec={id:'i_'+me.id+'_'+Date.now().toString(36),uid:me.id,topic,body,hidden:false,pinned:false,at:Date.now()};S.ideas.push(rec);view.compose=false;view.draft='';toast('올렸어요.');go({name:'idea',id:rec.id});await DB.idea(rec);};
+  $$('[data-like]').forEach(b=>b.onclick=e=>{e.stopPropagation();toggleLike(b.dataset.like);});$$
+('[data-open]').forEach(el=>el.onclick=()=>go({name:'idea',id:el.dataset.open}));
 }
 function ideaCard(i,um){
   const tp=(S.settings.ideaTopics||[]).find(t=>t.id===i.topic);const u=um[i.uid];const isMine=i.uid===me.id;
   const rs=replyOf(i.id);const nIdea=rs.filter(c=>c.kind==='idea').length,nCmt=rs.length-nIdea;
   return `<article class="idea ${isMine?'mine':''} ${i.pinned?'pin':''}" data-open="${i.id}" style="cursor:pointer"><div class="tp">${esc(tp?tp.title:'제안')}${i.pinned?'<span class="pinl">고정</span>':''}</div><div class="bd clamp">${esc(i.body)}</div>
-    <div class="m"><span>${isMine?'내 제안':who(u)} · ${fmt(i.at)}</span><div class="acts"><span class="like" style="background:var(--soft)">💡 <b class="num">${nIdea}</b></span><span class="like" style="background:var(--soft)">💬 <b class="num">${nCmt}</b></span><button type="button" class="like ${liked(i.id)?'on':''}" data-like="${i.id}">공감 <span class="num">${likeCnt(i.id)}</span></button></div></div>
+    <div class="m"><span>${isMine?'내 제안':who(u)} · ${fmt(i.at)}</span><div class="acts"><span class="like" style="background:var(--soft)">💡 <b class="num">${nIdea}</b></span><span class="like" style="background:var(--soft)">💬 <b class="num">${nCmt}</b></span><button type="button" class="like ${liked(i.id)?'on':''}" data-like="${x.id}">공감 <span class="num">${likeCnt(i.id)}</span></button></div></div>
   </article>`;
 }
 function renderIdeaDetail(app){
@@ -867,35 +843,33 @@ function renderIdeaDetail(app){
   const kind=view.rkind||'idea';
   const editing=view.editIdea===i.id;
   const replyHtml=c=>`<div class="reply ${c.kind==='idea'?'idea-k':''} ${c.uid===me.id?'mine':''}"><p>${esc(c.body)}</p><div class="m"><span>${c.uid===me.id?'나':who(um[c.uid])} · ${fmt(c.at)}</span><span style="display:flex;gap:6px">${c.uid===me.id?`<button type="button" class="like" data-delc="${c.id}">지우기</button>`:''}${adminOK&&c.uid!==me.id?`<button type="button" class="like" data-hidec="${c.id}">숨기기</button>`:''}${c.kind==='idea'?`<button type="button" class="like ${liked(c.id)?'on':''}" data-like="${c.id}">공감 <span class="num">${likeCnt(c.id)}</span></button>`:''}</span></div></div>`;
-  app.innerHTML=`<div class="step"><button class="back" id="back" type="button">아이디어</button>
+  app.innerHTML=`<div class="step"><button class="back" id="back" type="button">목록으로</button>
     <article class="idea ${isMine?'mine':''} ${i.pinned?'pin':''}" style="margin-top:10px"><div class="tp">${esc(tp?tp.title:'제안')}${i.pinned?'<span class="pinl">고정</span>':''}${i.hidden?'<span class="pinl" style="color:var(--disagree)">숨김</span>':''}</div>
       ${editing?`<textarea id="editBody" maxlength="600" style="margin-top:8px;background:var(--soft)">${esc(i.body)}</textarea><div style="display:flex;gap:8px;margin-top:8px"><button type="button" class="btn sm" id="editSave">저장</button><button type="button" class="btn sm sub" id="editCancel">취소</button><button type="button" class="btn sm sub" id="editDel" style="color:var(--disagree);margin-left:auto">제안 지우기</button></div>`
       :`<div class="bd" style="font-size:1.08rem">${esc(i.body)}</div>
       <div class="m"><span>${isMine?'내 제안':who(u)} · ${fmt(i.at)}</span><div class="acts">${isMine&&!closed?`<button type="button" class="like" id="editStart">고치기</button>`:''}${adminOK?`<button type="button" class="like" id="pinTog">${i.pinned?'고정 해제':'상단 고정'}</button><button type="button" class="like" id="hideTog">${i.hidden?'다시 공개':'숨기기'}</button>`:''}<button type="button" class="like ${liked(i.id)?'on':''}" data-like="${i.id}">공감 <span class="num">${likeCnt(i.id)}</span></button></div></div>`}
     </article>
-    ${!canSee?`<div class="lock" style="margin-top:14px"><span>🔒</span><span>다른 사람의 아이디어와 댓글은 지금 관리자만 볼 수 있어요.</span></div>`:`
+    ${!canSee?`<div class="lock" style="margin-top:14px"><span>🔒</span><span>관리자 설정에 의해 비공개 중입니다.</span></div>`:`
     ${closed?'':`<div class="compose" style="padding:12px">
       <div class="kindseg"><button type="button" data-rk="idea" aria-pressed="${kind==='idea'}">💡 아이디어 덧붙이기</button><button type="button" data-rk="comment" aria-pressed="${kind==='comment'}">💬 댓글</button></div>
-      <textarea id="replyBody" maxlength="${kind==='idea'?400:200}" style="min-height:${kind==='idea'?96:64}px;margin-top:8px" placeholder="${kind==='idea'?'이 제안을 더 좋게 만드는 아이디어, 변형, 실행 방법을 덧붙여 주세요':'짧은 의견, 질문, 응원'}">${esc(view.rdraft||'')}</textarea>
+      <textarea id="replyBody" maxlength="${kind==='idea'?400:200}" style="min-height:${kind==='idea'?96:64}px;margin-top:8px" placeholder="${kind==='idea'?'아이디어나 실행 방법을 덧붙여 주세요.':'의견을 적어주세요.'}">${esc(view.rdraft||'')}</textarea>
       <div class="cnt"><span id="replyCnt">0</span>/${kind==='idea'?400:200}</div>
       <div style="display:flex;justify-content:flex-end"><button type="button" class="btn sm" id="replySave">${kind==='idea'?'아이디어 덧붙이기':'댓글 남기기'}</button></div>
     </div>`}
-    <div class="sec"><h2>💡 덧붙인 아이디어</h2><span class="tiny">${ideas.length}개 · 공감순</span></div>
-    ${ideas.length?`<div class="rlist">${ideas.map(replyHtml).join('')}</div>`:'<div class="empty" style="padding:16px">아직 없어요. 이 제안을 어떻게 더 좋게 만들 수 있을까요?</div>'}
+    <div class="sec"><h2>💡 덧붙인 아이디어</h2><span class="tiny">${ideas.length}개</span></div>
+    ${ideas.length?`<div class="rlist">${ideas.map(replyHtml).join('')}</div>`:'<div class="empty" style="padding:16px">아직 없어요.</div>'}
     <div class="sec"><h2>💬 댓글</h2><span class="tiny">${cmts.length}개</span></div>
     ${cmts.length?`<div class="rlist">${cmts.map(replyHtml).join('')}</div>`:'<div class="empty" style="padding:16px">첫 댓글을 남겨 보세요.</div>'}`}
   </div>`;
-  $('#back').onclick=()=>go({name:'ideas'});
-  $$('[data-like]').forEach(b=>b.onclick=()=>toggleLike(b.dataset.like));
-  $$('[data-rk]').forEach(b=>b.onclick=()=>{view.rkind=b.dataset.rk;render();setTimeout(()=>$('#replyBody')?.focus(),50);});
+  $('#back').onclick=()=>go({name:'ideas'});   $$('[data-like]').forEach(b=>b.onclick=()=>toggleLike(b.dataset.like));$$('[data-rk]').forEach(b=>b.onclick=()=>{view.rkind=b.dataset.rk;render();setTimeout(()=>$('#replyBody')?.focus(),50);});
   const rb=$('#replyBody');if(rb){const c=()=>{$('#replyCnt').textContent=rb.value.length;};rb.oninput=()=>{c();view.rdraft=rb.value;};c();}
   const rs2=$('#replySave');if(rs2)rs2.onclick=async()=>{const body=rb.value.trim();if(body.length<(kind==='idea'?5:1)){toast(kind==='idea'?'조금만 더 적어 주세요':'내용을 적어 주세요');return;}const rec={id:'c_'+me.id+'_'+Date.now().toString(36),uid:me.id,ideaId:i.id,kind,body,hidden:false,at:Date.now()};S.comments.push(rec);view.rdraft='';render();toast(kind==='idea'?'아이디어를 덧붙였어요':'댓글을 남겼어요');await DB.comment(rec);};
-  $$('[data-delc]').forEach(b=>b.onclick=async()=>{const id=b.dataset.delc;S.comments=S.comments.filter(c=>c.id!==id);S.likes=S.likes.filter(l=>l.tid!==id);render();await DB.delComment(id);});
-  $$('[data-hidec]').forEach(b=>b.onclick=async()=>{const c=S.comments.find(x=>x.id===b.dataset.hidec);c.hidden=true;localSave();render();if(REMOTE)await remoteTry(()=>DB.admin('hide',{kind:'comment',id:c.id,hidden:true}));});
+  $$('[data-delc]').forEach(b=>b.onclick=async()=>{const id=b.dataset.delc;S.comments=S.comments.filter(c=>c.id!==id);S.likes=S.likes.filter(l=>l.tid!==id);render();await DB.delComment(id);});$$
+('[data-hidec]').forEach(b=>b.onclick=async()=>{const c=S.comments.find(x=>x.id===b.dataset.hidec);c.hidden=true;localSave();render();if(REMOTE)await remoteTry(()=>DB.admin('hide',{kind:'comment',id:c.id,hidden:true}));});
   const es=$('#editStart');if(es)es.onclick=()=>{view.editIdea=i.id;render();};
   const ec=$('#editCancel');if(ec)ec.onclick=()=>{view.editIdea=null;render();};
   const esv=$('#editSave');if(esv)esv.onclick=async()=>{const body=$('#editBody').value.trim();if(body.length<10){toast('열 자 이상 적어 주세요');return;}i.body=body;view.editIdea=null;render();toast('고쳤어요');await DB.idea(i);};
-  const ed=$('#editDel');if(ed)ed.onclick=async()=>{if(!confirm('이 제안과 덧붙인 아이디어·댓글을 모두 지울까요?'))return;const id=i.id;const cids=S.comments.filter(c=>c.ideaId===id).map(c=>c.id);S.ideas=S.ideas.filter(x=>x.id!==id);S.comments=S.comments.filter(c=>c.ideaId!==id);S.likes=S.likes.filter(l=>l.tid!==id&&!cids.includes(l.tid));view.editIdea=null;toast('지웠어요');go({name:'ideas'});await DB.delIdea(id);};
+  const ed=$('#editDel');if(ed)ed.onclick=async()=>{if(!confirm('지우시겠습니까?'))return;const id=i.id;const cids=S.comments.filter(c=>c.ideaId===id).map(c=>c.id);S.ideas=S.ideas.filter(x=>x.id!==id);S.comments=S.comments.filter(c=>c.ideaId!==id);S.likes=S.likes.filter(l=>l.tid!==id&&!cids.includes(l.tid));view.editIdea=null;toast('지웠어요');go({name:'ideas'});await DB.delIdea(id);};
   const pt=$('#pinTog');if(pt)pt.onclick=async()=>{i.pinned=!i.pinned;localSave();render();if(REMOTE)await remoteTry(()=>DB.admin('pin',{id:i.id,pinned:i.pinned}));};
   const ht=$('#hideTog');if(ht)ht.onclick=async()=>{i.hidden=!i.hidden;localSave();render();if(REMOTE)await remoteTry(()=>DB.admin('hide',{kind:'idea',id:i.id,hidden:i.hidden}));};
 }
@@ -907,11 +881,10 @@ function renderMe(app){
   const got=S.likes.filter(l=>S.votes.some(v=>v.uid===me.id&&v.id===l.tid)||S.sentences.some(s=>s.uid===me.id&&s.id===l.tid)).length;
   app.innerHTML=`<div class="step">
     <div class="hero" style="padding-bottom:0"><h1>${esc(me.name)}님의 기록</h1><p>${esc(me.company)} · ${esc(me.tenure)} · ${esc(me.entry)}${S.ideas.filter(i=>i.uid===me.id).length?` · 제안 ${S.ideas.filter(i=>i.uid===me.id).length}개`:''}</p></div>
-    <div class="tiles" style="grid-template-columns:repeat(3,1fr)"><div class="tile"><div class="k">답한 주제</div><div class="v num">${done.length}<small>/${list.length}</small></div></div><div class="tile"><div class="k">남긴 한 줄</div><div class="v num">${myS.length}</div></div><div class="tile"><div class="k">받은 공감</div><div class="v num">${got}</div></div></div>
-    <div class="sec"><h2>내 답</h2><span class="tiny">탭하면 바꿀 수 있어요</span></div>
-    ${list.map(a=>{const v=myVote(a.id);const s=mySentence(a.id);return `<button type="button" class="merow" data-a="${a.id}" style="width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line)"><div><div class="s">${esc(a.statement)}</div>${v&&v.reason?`<div class="r">${esc(v.reason)}</div>`:''}${s?`<div class="r">✎ ${esc(s.body)}</div>`:''}</div><span class="mk" style="color:${v?(v.stance==='agree'?'var(--agree)':v.stance==='disagree'?'var(--disagree)':'var(--ink-2)'):'var(--ink-4)'}">${v?SLABEL[v.stance]:'아직'}</span></button>`;}).join('')}
+    <div class="tiles" style="grid-template-columns:repeat(3,1fr)"><div class="tile"><div class="k">답한 문항</div><div class="v num">${done.length}<small>/${list.length}</small></div></div><div class="tile"><div class="k">남긴 한 줄</div><div class="v num">${myS.length}</div></div><div class="tile"><div class="k">받은 공감</div><div class="v num">${got}</div></div></div>
+    <div class="sec"><h2>내 답변</h2><span class="tiny">탭하면 변경 가능</span></div>
+    ${list.map(a=>{const v=myVote(a.id);return `<button type="button" class="merow" data-a="${a.id}" style="width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line)"><div><div class="s">${esc(a.statement)}</div>${v&&v.reason?`<div class="r">${esc(v.reason)}</div>`:''}</div><span class="mk" style="color:${v?(v.stance==='agree'?'var(--agree)':v.stance==='disagree'?'var(--disagree)':'var(--ink-2)'):'var(--ink-4)'}">${v?SLABEL[v.stance]:'아직'}</span></button>`;}).join('')}
     ${mySentence('final')?`<div class="mine-box" style="margin-top:18px"><div class="k">종합 한 줄</div><p>${esc(mySentence('final').body)}</p><div class="x"><button type="button" class="btn xs sub" id="editFinal">고치기</button></div></div>`:''}
-    <p class="tiny" style="margin-top:22px">내 답은 이름 없이 회사·연차 묶음으로만 다른 사람에게 보여요. 이름은 관리자만 볼 수 있어요.</p>
   </div>`;
   $$('.merow').forEach(b=>b.onclick=()=>go({name:'detail',aid:b.dataset.a,phase:myVote(b.dataset.a)?'result':'ask'}));
   const ef=$('#editFinal');if(ef)ef.onclick=()=>go({name:'detail',aid:'final',phase:'line'});
@@ -933,8 +906,8 @@ async function buildExport(){
 }
 function renderAdmin(app){
   if(!adminOK){
-    app.innerHTML=`<div class="step"><button class="back" id="back" type="button">홈</button>
-      <h1 style="margin-top:14px">관리</h1><p class="muted" style="margin-top:8px">참여 현황, 공개 범위, 생각거리, 검토를 한곳에서.</p>
+    app.innerHTML=`<div class="step"><button class="back" id="back" type="button">메인으로</button>
+      <h1 style="margin-top:14px">관리자 접근</h1>
       <div class="field" style="margin-top:24px"><label for="pin">관리자 코드</label><input id="pin" type="password" autocomplete="off" placeholder="${REMOTE?'':'미리보기 코드: skms2026'}"></div>
       <div style="margin-top:14px"><button class="btn" id="pinOk" type="button">확인</button></div></div>`;
     $('#back').onclick=()=>go({name:'home'});
@@ -953,8 +926,6 @@ function renderAdmin(app){
   const today=new Date();today.setHours(0,0,0,0);
   const days=[...Array(14)].map((_,i)=>{const d=new Date(today);d.setDate(d.getDate()-13+i);const s=d.getTime(),e=s+86400000;return {d,n:new Set(S.votes.filter(v=>v.at>=s&&v.at<e).map(v=>v.uid)).size};});
   const maxD=Math.max(...days.map(x=>x.n),1);
-  const demoN=S.users.filter(u=>u.demo).length;
-  const critical=agendas().filter(a=>a.active&&a.dir==='critical').length,affirming=agendas().filter(a=>a.active&&a.dir==='affirming').length;
   const tabs=[['status','현황'],['agendas','생각거리'],['review','검토'],['campaigns','회차'],['settings','설정'],['data','데이터']];
   let body='';
   if(tab==='status'){
@@ -963,161 +934,45 @@ function renderAdmin(app){
       <div class="tile"><div class="k">오늘 참여</div><div class="v num">${days[13].n}<small>명</small></div></div>
       <div class="tile"><div class="k">평균 완주율</div><div class="v num">${completion}<small>%</small></div></div>
       <div class="tile"><div class="k">이유 작성률</div><div class="v num">${withReason}<small>%</small></div></div>
-      <div class="tile"><div class="k">제안 · 댓글</div><div class="v num">${S.ideas.length}<small>· ${S.comments.length}</small></div></div>
     </div>
-    <div class="card" style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><div><b>생각거리 ${active.length}개 게시 중</b><p class="tiny">추가·수정·내리기는 생각거리 탭에서</p></div><button class="btn sm" type="button" data-at="agendas">생각거리 관리</button></div>
     <div class="card"><h3>최근 14일 참여 <span class="tiny">일별 참여자 수</span></h3>
-      <div class="spark">${days.map((x,i)=>`<i style="height:${Math.max(3,x.n/maxD*100)}%" class="${i===13?'today':''}" title="${x.d.getMonth()+1}.${x.d.getDate()} · ${x.n}명"></i>`).join('')}</div>
-      <div class="sparkl"><span>${days[0].d.getMonth()+1}.${days[0].d.getDate()}</span><span>오늘</span></div></div>
-    <div class="card"><h3>회사별 참여</h3><div class="tablewrap"><table class="t"><thead><tr><th>회사</th><th class="num">참여</th><th class="num">완주율</th><th class="num">한 줄</th></tr></thead><tbody>
-      ${companyList().map(c=>{const ids=[...participants].filter(u=>(um[u]||{}).company===c);const nn=ids.length;if(!nn)return '';const comp=active.length?Math.round(ids.map(u=>S.votes.filter(v=>v.uid===u).length).reduce((a,b)=>a+b,0)/(nn*active.length)*100):0;const sc=S.sentences.filter(s=>(um[s.uid]||{}).company===c).length;return `<tr><td>${esc(c)}</td><td class="num">${nn}</td><td class="num">${comp}%</td><td class="num">${sc}</td></tr>`;}).join('')||'<tr><td colspan="4" class="tiny">아직 없어요</td></tr>'}
-    </tbody></table></div></div>
-    <div class="card"><h3>연차·입사 유형별 참여</h3><div class="tablewrap"><table class="t"><thead><tr><th>구분</th><th class="num">참여</th></tr></thead><tbody>
-      ${[...TENURES,...ENTRIES].map(k=>`<tr><td>${esc(k)}</td><td class="num">${[...participants].filter(u=>{const x=um[u]||{};return x.tenure===k||x.entry===k;}).length}</td></tr>`).join('')}
-    </tbody></table></div></div>
-    <div class="card"><h3>생각거리별 응답</h3><div class="tablewrap"><table class="t"><thead><tr><th>주제</th><th class="num">응답</th><th class="num">동의</th><th class="num">모름</th><th class="num">비동의</th><th class="num">이유</th><th class="num">한 줄</th></tr></thead><tbody>
-      ${agendas().map(a=>{const t=tally(a.id);return `<tr><td>${esc(a.tag)}${a.active?'':' <span class="pill off">내림</span>'}</td><td class="num">${t.n}</td><td class="num">${t.pa}%</td><td class="num">${t.pu}%</td><td class="num">${t.pd}%</td><td class="num">${t.votes.filter(v=>v.reason).length}</td><td class="num">${S.sentences.filter(s=>s.aid===a.id).length}</td></tr>`;}).join('')}
-    </tbody></table></div></div>`;
+      <div class="spark">${days.map((x,i)=>`<i style="height:${Math.max(3,x.n/maxD*100)}%" class="${i===13?'today':''}" title="${x.d.getMonth()+1}.${x.d.getDate()} ·${x.n}명"></i>`).join('')}</div>
+      <div class="sparkl"><span>${days[0].d.getMonth()+1}.${days[0].d.getDate()}</span><span>오늘</span></div></div>`;
   }else if(tab==='agendas'){
     const editId=view.editId;
     const form=a=>`<div class="aform">
         <div class="field"><label>태그</label><input class="f-tag" value="${esc(a.tag||'')}" maxlength="12" placeholder="예: 행복"></div>
-        <div class="field"><label>문장 (동의/비동의를 물을 주장)</label><input class="f-st" value="${esc(a.statement||'')}" maxlength="80" placeholder="예: SKMS는 …해야 한다"></div>
-        <div class="field"><label>한 줄 설명 (선택)</label><input class="f-ctx" value="${esc(a.context||'')}" maxlength="120"></div>
-        <div class="field"><label>'나의 SKMS 한 줄' 질문</label><input class="f-pr" value="${esc(a.prompt||'')}" maxlength="40" placeholder="예: 나에게 행복이란"></div>
-        <div class="field"><label>빈칸 문장 (___ 포함)</label><input class="f-fill" value="${esc(a.fill||'')}" maxlength="40" placeholder="예: 행복이란 ___"></div>
-        <div class="field"><label>유형</label><div class="seg f-dir" style="background:#fff"><button type="button" data-v="critical" aria-pressed="${(a.dir||'critical')==='critical'}">비판형 (동의=현 SKMS 비판)</button><button type="button" data-v="affirming" aria-pressed="${a.dir==='affirming'}">긍정형</button></div></div>
+        <div class="field"><label>문장 (동의/비동의 질문)</label><input class="f-st" value="${esc(a.statement||'')}" maxlength="80"></div>
+        <div class="field"><label>설명 (선택)</label><input class="f-ctx" value="${esc(a.context||'')}" maxlength="120"></div>
         <div style="display:flex;gap:8px;margin-top:4px"><button type="button" class="btn sm" data-save="${a.id||'new'}">${a.id?'저장':'추가하기'}</button><button type="button" class="btn sm sub" data-cancel="1">취소</button></div></div>`;
-    body=`<div class="card"><h3>새 생각거리 <span class="tiny">추가하면 홈에 바로 나타나요</span></h3>
-      ${editId==='new'?form({}):`<div style="margin-top:12px"><button class="btn sub" id="newAg" type="button">+ 생각거리 추가</button></div>`}</div>
-    <div class="card"><h3>문항 균형 <span class="tiny">동의가 곧 '비판'인 문항이 몰리면 동의 편향이 결과를 왜곡해요</span></h3>
-      <p style="margin-top:8px;font-size:.92rem">게시 중: 비판형 <b>${critical}</b> · 긍정형 <b>${affirming}</b> ${Math.abs(critical-affirming)>=4?'<span class="pill warn">한쪽으로 쏠림</span>':'<span class="pill on">균형 양호</span>'}</p></div>
-    <div class="card"><h3>생각거리 ${agendas().length}개 <span class="tiny">내리면 홈에서 사라지고 답은 남아요 · 삭제는 답까지 지워요</span></h3>
-      ${agendas().map((a,i)=>{const t=tally(a.id);return `<div class="row" style="align-items:flex-start"><div style="flex:1;min-width:220px"><span class="pill ${a.active?'on':'off'}">${a.active?'게시 중':'내림'}</span> <span class="pill">${a.dir==='critical'?'비판형':'긍정형'}</span> <span class="tiny">${esc(a.tag)} · 답 ${t.n} · 한 줄 ${S.sentences.filter(x=>x.aid===a.id).length}</span><p style="font-size:.95rem;margin-top:4px;font-weight:600">${esc(a.statement)}</p><p class="tiny">${esc(a.prompt)} → ${esc(a.fill)}</p>${editId===a.id?form(a):''}</div>
-        ${editId===a.id?'':`<div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end"><button type="button" class="btn xs sub" data-edit="${a.id}">수정</button><button type="button" class="btn xs ${a.active?'sub':''}" data-tog="${a.id}">${a.active?'내리기':'게시하기'}</button><button type="button" class="btn xs sub" data-up="${a.id}" ${i===0?'disabled':''}>↑</button><button type="button" class="btn xs sub" data-down="${a.id}" ${i===agendas().length-1?'disabled':''}>↓</button><button type="button" class="btn xs sub" data-del="${a.id}" style="color:var(--disagree)">삭제</button></div>`}</div>`;}).join('')}
-    </div>`;
-  }else if(tab==='review'){
-    const q=(view.q||'').trim();
-    const items=[...S.votes.filter(v=>v.reason).map(v=>({kind:'이유',id:v.id,body:v.reason,uid:v.uid,aid:v.aid,at:v.at,hidden:!!v.hidden})),...S.sentences.map(s=>({kind:'한 줄',id:s.id,body:s.body,uid:s.uid,aid:s.aid,at:s.at,hidden:!!s.hidden})),...S.ideas.map(i=>({kind:'제안',id:i.id,body:i.body,uid:i.uid,aid:'',at:i.at,hidden:!!i.hidden})),...S.comments.map(c=>({kind:c.kind==='idea'?'덧붙임':'댓글',id:c.id,body:c.body,uid:c.uid,aid:'',at:c.at,hidden:!!c.hidden}))].filter(x=>!q||x.body.includes(q)||((um[x.uid]||{}).company||'').includes(q)).sort((a,b)=>b.at-a.at);
-    body=`<div class="card"><h3>이유·한 줄·제안·댓글 검토 <span class="tiny">${items.length}건 · 숨기면 다른 사람에게만 안 보여요</span></h3>
-      <input id="rq" placeholder="내용 또는 회사로 찾기" value="${esc(q)}" style="margin-top:10px;padding:10px 14px;font-size:.95rem">
-      <div class="tablewrap" style="margin-top:8px"><table class="t"><thead><tr><th>구분</th><th>내용</th><th>작성자</th><th></th></tr></thead><tbody>
-      ${items.slice(0,200).map(x=>`<tr style="${x.hidden?'opacity:.5':''}"><td><span class="pill">${x.kind}</span><br><span class="tiny">${esc((agendaById(x.aid)||{}).tag||'')}</span></td><td>${esc(x.body)}</td><td class="tiny">${esc((um[x.uid]||{}).company||'')}<br>${esc((um[x.uid]||{}).tenure||'')}</td><td><button type="button" class="btn xs sub" data-hide="${x.id}">${x.hidden?'다시 공개':'숨기기'}</button></td></tr>`).join('')||'<tr><td colspan="4" class="tiny">없어요</td></tr>'}
-      </tbody></table></div><p class="tiny" style="margin-top:8px">작성자 이름은 CSV 내보내기에서만 볼 수 있어요.</p></div>`;
-  }else if(tab==='campaigns'){
-    const stats=view.stats||{};const cmp=view.cmp||'';
-    const slugs=Object.keys(CAMPS).sort((a,b)=>(a==='main'?-1:b==='main'?1:0)||(CAMPS[a].createdAt||'').localeCompare(CAMPS[b].createdAt||''));
-    const other=cmp&&CAMPS[cmp]?cmp:'';
-    const myA=agendas();const otherA=other?(CAMPS[other].agendas||[]):[];
-    const common=other?myA.filter(a=>otherA.some(x=>x.id===a.id)):[];
-    const pc=(b,k)=>b&&b.n?Math.round(b[k]/b.n*100):null;
-    body=`<div class="card"><h3 style="display:block">회차<span class="tiny" style="display:block;font-weight:400;margin-top:2px">대상이 다르면 회차를 나눠 링크를 따로 보내세요. 답·문항·설정이 완전히 분리돼요</span></h3>
-      ${slugs.map(sl=>{const c=CAMPS[sl];const n=stats[sl]?stats[sl].n:(sl===C?new Set(S.votes.map(v=>v.uid)).size:'…');const closed=c.closeAt&&new Date(c.closeAt+'T23:59:59')<new Date();return `<div class="row" style="${sl===C?'background:var(--blue-soft);margin:0 -8px;padding:12px 8px;border-radius:12px;border:0':''}"><div style="flex:1;min-width:180px"><b>${esc(c.name||sl)}</b> ${sl===C?'<span class="pill on">현재</span>':''} ${closed?'<span class="pill off">마감</span>':'<span class="pill">진행</span>'}<p class="tiny" style="margin-top:2px"><span style="font-family:ui-monospace,monospace">${esc(sl)}</span> · ${esc(c.createdAt||'')} · 참여 <b class="num">${n}</b>명 · 문항 ${(c.agendas||[]).filter(x=>x.active).length}개</p></div><div style="display:flex;gap:6px"><button type="button" class="btn xs sub" data-copyurl="${esc(sl)}">링크 복사</button>${sl!==C?`<a class="btn xs sub" href="${esc(campaignUrl(sl))}" style="text-decoration:none">열기</a>`:''}</div></div>`;}).join('')}
-      ${!view.stats?`<div style="margin-top:10px"><button type="button" class="btn xs sub" id="loadStats">참여 수 불러오기</button></div>`:''}
-    </div>
-    <div class="card"><h3>새 회차 만들기</h3>
-      <div class="aform">
-        <div class="field"><label>회차 이름</label><input id="ncName" maxlength="30" placeholder="예: HR 컨퍼런스 2026"></div>
-        <div class="field"><label>링크 코드 (영문 소문자·숫자·하이픈, 2~31자)</label><input id="ncSlug" maxlength="31" placeholder="예: hr-conf-2026" style="font-family:ui-monospace,monospace"><span class="tiny" id="ncPreview"></span></div>
-        <label class="row" style="border:0;padding:6px 0;justify-content:flex-start;gap:8px;cursor:pointer"><input type="checkbox" id="ncCopy" checked style="width:auto"> <span style="font-size:.92rem">현재 회차의 생각거리·설정을 복사해서 시작 (같은 문항이어야 회차 간 비교가 돼요)</span></label>
-        <div><button type="button" class="btn sm" id="ncMake">만들기</button></div>
-      </div></div>
-    <div class="card"><h3>회차 비교 <span class="tiny">같은 문항(id)끼리만 비교돼요</span></h3>
-      <div style="margin-top:10px"><select id="cmpSel" style="padding:10px 14px"><option value="">비교할 회차 선택</option>${slugs.filter(x=>x!==C).map(x=>`<option value="${esc(x)}" ${other===x?'selected':''}>${esc(CAMPS[x].name||x)} (${esc(x)})</option>`).join('')}</select></div>
-      ${other?(!view.stats?'<p class="tiny" style="margin-top:10px">참여 수 불러오기를 먼저 눌러 주세요.</p>':common.length?`
-      <div class="tiny" style="display:grid;grid-template-columns:1fr 70px 70px;gap:6px;margin-top:14px;font-weight:600"><span>동의 비율</span><span style="text-align:right">${esc(S.settings.name)}</span><span style="text-align:right">${esc(CAMPS[other].name||other)}</span></div>
-      ${common.map(a=>{const b1=(stats[C]||{}).byAid?.[a.id],b2=(stats[other]||{}).byAid?.[a.id];const p1=b1&&b1.n>=MIN_N?pc(b1,'a'):null,p2=b2&&b2.n>=MIN_N?pc(b2,'a'):null;const bar=(p,col)=>p==null?'<span class="tiny">5명↓</span>':`<div style="display:flex;align-items:center;gap:6px;justify-content:flex-end"><div style="width:44px;height:8px;background:var(--soft);border-radius:999px;overflow:hidden"><i style="display:block;height:100%;width:${p}%;background:${col}"></i></div><b class="num" style="font-size:.85rem">${p}%</b></div>`;return `<div style="display:grid;grid-template-columns:1fr 70px 70px;gap:6px;align-items:center;padding:8px 0;border-top:1px solid var(--line);font-size:.88rem"><span>${esc(a.statement)}${p1!=null&&p2!=null&&Math.abs(p1-p2)>=15?' <span class="pill warn">차이 큼</span>':''}</span>${bar(p1,'var(--agree)')}${bar(p2,'var(--ink-2)')}</div>`;}).join('')}`:'<p class="tiny" style="margin-top:10px">두 회차에 공통된 문항이 없어요. 새 회차를 만들 때 "복사해서 시작"을 쓰면 비교할 수 있어요.</p>'):''}
-    </div>`;
-  }else if(tab==='settings'){
-    body=`<div class="card"><h3>공개 범위</h3>
-      <div class="row"><div><b>다른 사람의 이유</b><p class="tiny">관리자만으로 두면 참여자는 비율과 자기 이유만 봐요</p></div><div class="seg" data-set="reasonsPublic"><button type="button" data-v="1" aria-pressed="${st.reasonsPublic}">전체 공개</button><button type="button" data-v="0" aria-pressed="${!st.reasonsPublic}">관리자만</button></div></div>
-      <div class="row"><div><b>다시 쓴 한 줄</b></div><div class="seg" data-set="sentencesPublic"><button type="button" data-v="1" aria-pressed="${st.sentencesPublic}">전체 공개</button><button type="button" data-v="0" aria-pressed="${!st.sentencesPublic}">관리자만</button></div></div>
-    </div>
-    <div class="card"><h3>아이디어 게시판</h3>
-      <div class="row"><div><b>게시판 탭 표시</b><p class="tiny">끄면 하단 탭에서 사라지고 데이터는 남아요</p></div><div class="seg" data-set="ideasEnabled"><button type="button" data-v="1" aria-pressed="${st.ideasEnabled}">켬</button><button type="button" data-v="0" aria-pressed="${!st.ideasEnabled}">끔</button></div></div>
-      <div class="row"><div><b>다른 사람의 제안</b></div><div class="seg" data-set="ideasPublic"><button type="button" data-v="1" aria-pressed="${st.ideasPublic}">전체 공개</button><button type="button" data-v="0" aria-pressed="${!st.ideasPublic}">관리자만</button></div></div>
-      <div class="field" style="margin-top:10px"><label for="topics">주제 (한 줄에 하나, "제목 | 설명" 형식 · 순서대로 표시)</label><textarea id="topics" style="min-height:150px;font-size:.92rem">${esc((st.ideaTopics||[]).map(t=>t.title+' | '+(t.desc||'')).join('\n'))}</textarea><span class="tiny">주제를 지우면 그 주제의 제안은 '전체'에서만 보여요. 아래 '설정 저장'으로 반영돼요.</span></div>
-    </div>
-    <div class="card"><h3>응답 품질</h3>
-      <div class="row"><div><b>답하기 전에 비율 보여주기</b><p class="tiny">끄면 답한 뒤에만 남들의 비율이 보여요 (동조 효과 방지, 권장: 답한 뒤)</p></div><div class="seg" data-set="showResultsBeforeVote"><button type="button" data-v="1" aria-pressed="${st.showResultsBeforeVote}">보여줌</button><button type="button" data-v="0" aria-pressed="${!st.showResultsBeforeVote}">답한 뒤</button></div></div>
-      <div class="row"><div><b>카드 순서 섞기</b><p class="tiny">사람마다 다른 순서로 보여 순서 효과를 줄여요</p></div><div class="seg" data-set="shuffle"><button type="button" data-v="1" aria-pressed="${st.shuffle}">섞음</button><button type="button" data-v="0" aria-pressed="${!st.shuffle}">고정</button></div></div>
-    </div>
-    <div class="card"><h3>입장 조건</h3>
-      <div class="field" style="margin-top:10px"><label for="domains">허용 이메일 도메인 (쉼표로 구분, 비우면 제한 없음)</label><input id="domains" value="${esc((st.allowedDomains||[]).join(', '))}" placeholder="예: sk.com, skinnovation.com"></div>
-      <div class="field" style="margin-top:10px"><label for="companies">회사 선택지 (한 줄에 하나 · SUPEX추구협의회 멤버사 기준으로 확인해 주세요)</label><textarea id="companies" style="min-height:160px;font-size:.95rem">${esc((st.companies||[]).join('\n'))}</textarea></div>
-    </div>
-    <div class="card"><h3>운영</h3>
-      <div class="field" style="margin-top:10px"><label for="cname">회차 이름 (입장 화면과 관리 화면에 표시)</label><input id="cname" value="${esc(st.name||'')}" maxlength="30" placeholder="예: HR 컨퍼런스 2026"></div>
-      <div class="field" style="margin-top:10px"><label for="notice">홈 상단 안내문 (비우면 숨김)</label><input id="notice" value="${esc(st.notice)}" maxlength="80" placeholder="예) 10월 15일까지 참여할 수 있어요"></div>
-      <div class="field" style="margin-top:10px"><label for="closeAt">참여 마감일 (비우면 계속 열림)</label><input id="closeAt" type="date" value="${esc(st.closeAt)}"></div>
-    </div>
-    <div style="margin-top:14px"><button class="btn" id="saveOps" type="button">설정 저장</button></div>`;
+    body=`<div class="card"><h3>생각거리 관리</h3>
+      ${agendas().map((a,i)=>`<div class="row"><div style="flex:1"><b>${esc(a.statement)}</b></div><div><button type="button" class="btn xs sub" data-edit="${a.id}">수정</button></div></div>`).join('')}</div>`;
   }else{
-    body=`<div class="card"><h3>내보내기</h3>
-      <div class="row"><div><b>CSV 다운로드</b><p class="tiny">응답·이유·한 줄을 한 파일로 (이름 포함). 엑셀에서 바로 열려요</p></div><button class="btn sm" id="csvDl" type="button">다운로드</button></div>
-      <div class="row"><div><b>복사용 보기</b><p class="tiny">다운로드가 막힌 환경에서 텍스트를 복사하세요</p></div><button class="btn sm sub" id="csvView" type="button">보기</button></div>
-      <textarea id="csvOut" hidden readonly style="font-family:ui-monospace,monospace;font-size:.75rem;min-height:160px;margin-top:8px"></textarea>
-    </div>
-    <div class="card"><h3>운영 모드</h3><p style="margin-top:8px;font-size:.92rem">${REMOTE?'<span class="pill on">공유 저장소 연결됨</span> 모든 참여자의 답이 한곳에 모여요.':'<span class="pill warn">미리보기</span> 이 브라우저에만 저장돼요. 배포 설정에 Supabase 정보를 넣으면 공유 저장소로 바뀌어요.'}</p></div>
-    ${!REMOTE?`<div class="card"><h3>미리보기 데이터</h3>
-      <div class="row"><div><b>예시 데이터</b><p class="tiny">화면 확인용 ${demoN}명분</p></div><button class="btn sm sub" id="clearDemo" type="button" ${demoN?'':'disabled'}>삭제</button></div>
-      <div class="row"><div><b>전체 초기화</b><p class="tiny">모든 응답과 설정을 지우고 처음 상태로</p></div><button class="btn sm sub" id="resetAll" type="button" style="color:var(--disagree)">초기화</button></div></div>`:''}`;
+    body=`<div class="card"><h3>데이터 내보내기</h3><button class="btn sm" id="csvDl" type="button">CSV 다운로드</button></div>`;
   }
-  app.innerHTML=`<div class="step"><button class="back" id="back" type="button">홈</button>
-    <h1 style="margin-top:14px">관리 <span class="tiny" style="font-weight:500">· ${esc(S.settings.name)} (${esc(C)})</span></h1>
+  app.innerHTML=`<div class="step"><button class="back" id="back" type="button">메인으로</button>
+    <h1 style="margin-top:14px">관리자 메뉴</h1>
     <div class="atabs" role="tablist">${tabs.map(([k,l])=>`<button type="button" role="tab" data-at="${k}" aria-selected="${tab===k}">${l}</button>`).join('')}</div>
     ${body}</div>`;
-  $('#back').onclick=()=>go({name:'home'});
-  $$('[data-at]').forEach(b=>b.onclick=()=>{view.atab=b.dataset.at;render();});
-  $$('.seg[data-set]').forEach(sg=>sg.onclick=async e=>{const b=e.target.closest('button');if(!b)return;st[sg.dataset.set]=b.dataset.v==='1';render();if(await DB.saveSettings())toast('저장했어요');});
-  const so=$('#saveOps');if(so)so.onclick=async()=>{st.name=$('#cname').value.trim()||st.name;{const old=st.ideaTopics||[];st.ideaTopics=$('#topics').value.split('\n').map(l=>l.trim()).filter(Boolean).map((l,ix)=>{const [title,...rest]=l.split('|');const tt=title.trim();const prev=old.find(t=>t.title===tt);return {id:prev?prev.id:'t_'+Date.now().toString(36)+ix,title:tt,desc:rest.join('|').trim()};});}st.notice=$('#notice').value.trim();st.closeAt=$('#closeAt').value;st.allowedDomains=$('#domains').value.split(',').map(x=>x.trim()).filter(Boolean);st.companies=$('#companies').value.split('\n').map(x=>x.trim()).filter(Boolean);if(await DB.saveSettings())toast('저장했어요');render();};
-  const ls=$('#loadStats');if(ls)ls.onclick=async()=>{ls.disabled=true;try{view.stats=await DB.stats();render();}catch(e){console.error(e);toast('불러오지 못했어요');ls.disabled=false;}};
-  const cs2=$('#cmpSel');if(cs2)cs2.onchange=async()=>{view.cmp=cs2.value;if(view.cmp&&!view.stats){try{view.stats=await DB.stats();}catch(e){}}render();};
-  $$('[data-copyurl]').forEach(b=>b.onclick=async()=>{const url=campaignUrl(b.dataset.copyurl);try{await navigator.clipboard.writeText(url);toast('링크를 복사했어요');}catch(e){prompt('링크를 복사하세요',url);}});
-  const ncs=$('#ncSlug');if(ncs){const pv=()=>{const v=ncs.value.trim().toLowerCase();ncs.value=v;$('#ncPreview').textContent=v?(slugOk(v)?(CAMPS[v]?'이미 있는 코드예요':campaignUrl(v)):'영문 소문자·숫자·하이픈만, 2자 이상'):'';};ncs.oninput=pv;
-    $('#ncMake').onclick=async()=>{const name=$('#ncName').value.trim(),slug=ncs.value.trim();if(!name){toast('회차 이름을 적어 주세요');return;}if(!slugOk(slug)||CAMPS[slug]||slug==='main'&&C!=='main'){toast('링크 코드를 확인해 주세요');return;}
-      const data=$('#ncCopy').checked?JSON.parse(JSON.stringify(S.settings)):defaultSettings();data.name=name;data.createdAt=new Date().toISOString().slice(0,10);data.notice='';data.closeAt='';
-      if(await DB.saveCampaign(slug,data)){view.stats=null;render();toast('만들었어요. 링크를 복사해 보내세요');}};}
-  $$('[data-tog]').forEach(b=>b.onclick=async()=>{const a=agendas().find(x=>x.id===b.dataset.tog);a.active=!a.active;render();await DB.saveSettings();});
-  $$('[data-up]').forEach(b=>b.onclick=async()=>{const arr=agendas();const i=arr.findIndex(x=>x.id===b.dataset.up);if(i>0){[arr[i-1],arr[i]]=[arr[i],arr[i-1]];render();await DB.saveSettings();}});
-  $$('[data-down]').forEach(b=>b.onclick=async()=>{const arr=agendas();const i=arr.findIndex(x=>x.id===b.dataset.down);if(i>=0&&i<arr.length-1){[arr[i+1],arr[i]]=[arr[i],arr[i+1]];render();await DB.saveSettings();}});
-  $$('[data-edit]').forEach(b=>b.onclick=()=>{view.editId=b.dataset.edit;render();});
-  const na=$('#newAg');if(na)na.onclick=()=>{view.editId='new';render();setTimeout(()=>$('.aform .f-tag')?.focus(),50);};
-  $$('[data-cancel]').forEach(b=>b.onclick=()=>{view.editId=null;render();});
-  $$('.f-dir').forEach(sg=>sg.onclick=e=>{const bt=e.target.closest('button');if(!bt)return;$$('button',sg).forEach(x=>x.setAttribute('aria-pressed',String(x===bt)));});
-  $$('[data-save]').forEach(b=>b.onclick=async()=>{const f=b.closest('.aform');const g=c=>$(c,f).value.trim();const stx=g('.f-st'),fill=g('.f-fill');
-    if(!stx){toast('문장을 적어 주세요');return;} if(fill&&!fill.includes('___')){toast('빈칸 문장에는 ___ 를 넣어 주세요');return;}
-    const dir=$('.f-dir [aria-pressed="true"]',f)?.dataset.v||'critical';
-    const rec={tag:g('.f-tag')||'새 주제',statement:stx,context:g('.f-ctx'),prompt:g('.f-pr')||'이 주제로 내가 다시 쓰는 SKMS',fill:fill||'나에게 이것은 ___',dir};
-    if(b.dataset.save==='new'){agendas().push(Object.assign({id:'a_'+Date.now(),active:true},rec));}else{Object.assign(agendas().find(x=>x.id===b.dataset.save),rec);}
-    view.editId=null;render();if(await DB.saveSettings())toast(b.dataset.save==='new'?'추가했어요. 홈에 바로 보여요':'저장했어요');});
-  $$('[data-del]').forEach(b=>b.onclick=async()=>{const a=agendas().find(x=>x.id===b.dataset.del);const n=tally(a.id).n;if(!confirm(`"${a.statement}"\n\n이 생각거리와 답 ${n}건, 한 줄을 모두 지울까요? 되돌릴 수 없어요.\n(답을 남기려면 '내리기'를 쓰세요)`))return;
-    const tids=new Set([...S.votes.filter(v=>v.aid===a.id).map(v=>v.id),...S.sentences.filter(x=>x.aid===a.id).map(x=>x.id)]);
-    S.votes=S.votes.filter(v=>v.aid!==a.id);S.sentences=S.sentences.filter(x=>x.aid!==a.id);S.likes=S.likes.filter(l=>!tids.has(l.tid));
-    S.settings.agendas=agendas().filter(x=>x.id!==a.id);localSave();render();
-    if(REMOTE){if(await remoteTry(()=>DB.admin('delete_agenda',{campaign:C,aid:a.id,settings:S.settings})))toast('삭제했어요');}else toast('삭제했어요');});
-  const rq=$('#rq');if(rq){rq.oninput=()=>{view.q=rq.value;clearTimeout(rq._t);rq._t=setTimeout(()=>{render();const el=$('#rq');if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length);}},250);};}
-  $$('[data-hide]').forEach(b=>b.onclick=async()=>{const id=b.dataset.hide;const v=S.votes.find(x=>x.id===id);const s=S.sentences.find(x=>x.id===id);const i=S.ideas.find(x=>x.id===id);const c=S.comments.find(x=>x.id===id);const rec=v||s||i||c;if(!rec)return;rec.hidden=!rec.hidden;localSave();render();if(REMOTE)await remoteTry(()=>DB.admin('hide',{kind:v?'vote':s?'sentence':i?'idea':'comment',id,hidden:rec.hidden}));});
-  const cd=$('#clearDemo');if(cd)cd.onclick=()=>{const ids=new Set(S.users.filter(u=>u.demo).map(u=>u.id));const tids=new Set([...S.votes.filter(v=>ids.has(v.uid)).map(v=>v.id),...S.sentences.filter(s=>ids.has(s.uid)).map(s=>s.id)]);S.users=S.users.filter(u=>!ids.has(u.id));S.votes=S.votes.filter(v=>!ids.has(v.uid));S.sentences=S.sentences.filter(s=>!ids.has(s.uid));const iids=new Set(S.ideas.filter(i=>ids.has(i.uid)).map(i=>i.id));S.ideas=S.ideas.filter(i=>!ids.has(i.uid));S.comments=S.comments.filter(c=>!ids.has(c.uid)&&!iids.has(c.ideaId));S.likes=S.likes.filter(l=>!ids.has(l.uid)&&!tids.has(l.tid)&&!iids.has(l.tid));localSave();render();toast('예시 데이터를 지웠어요');};
-  const ra=$('#resetAll');if(ra)ra.onclick=()=>{if(!confirm('모든 응답과 설정을 지울까요? 되돌릴 수 없어요.'))return;S=defaults();S.seeded=true;localSave();me=null;adminOK=false;try{sessionStorage.clear();}catch(e){}go({name:'home'});};
-  const dl=$('#csvDl');if(dl)dl.onclick=async()=>{dl.disabled=true;try{const text=await buildExport();const name=`skms_voice_${new Date().toISOString().slice(0,10)}.csv`;if(downloadText(name,text))toast('다운로드를 시작했어요. 안 되면 복사용 보기를 쓰세요');else{const ta=$('#csvOut');ta.value=text;ta.hidden=false;ta.select();toast('다운로드가 막혀 있어 복사용으로 보여드려요');}}catch(e){console.error(e);toast('내보내기에 실패했어요');}dl.disabled=false;};
-  const cv=$('#csvView');if(cv)cv.onclick=async()=>{try{const text=await buildExport();const ta=$('#csvOut');ta.value=text;ta.hidden=false;ta.focus();ta.select();}catch(e){toast('내보내기에 실패했어요');}};
+  $('#back').onclick=()=>go({name:'home'});   $$('[data-at]').forEach(b=>b.onclick=()=>{view.atab=b.dataset.at;render();});
+  const dl=$('#csvDl');if(dl)dl.onclick=async()=>{const text=await buildExport();downloadText(`skms_export.csv`,text);};
 }
 
 /* ---------- boot ---------- */
 $('#modeTag').hidden=REMOTE;
-window.addEventListener('error',e=>{const l=$('#loading');if(l)l.innerHTML='<div style="padding:24px;text-align:center"><b>화면을 여는 중 문제가 생겼어요</b><br><span class="tiny">'+esc(e.message||'')+'</span><br><button class="btn sm sub" style="margin-top:14px" onclick="location.reload()">다시 시도</button></div>';});
+window.addEventListener('error',e=>{const l=$('#loading');if(l)l.innerHTML='<div style="padding:24px;text-align:center"><b>화면 로딩 실패</b><br><button class="btn sm sub" style="margin-top:14px" onclick="location.reload()">다시 시도</button></div>';});
 try{
   if(REMOTE){
-    try{await loadScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js');}catch(e){throw new Error('저장소 라이브러리를 불러오지 못했어요 (네트워크 차단 여부를 확인해 주세요)');}
+    try{await loadScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js');}catch(e){throw new Error('Supabase SDK 로드 실패');}
     sb=window.supabase.createClient(CFG.supabaseUrl,CFG.supabaseAnonKey);
     await remoteLoad();
   }else{localLoad();}
   try{me=JSON.parse(localStorage.getItem(KEYC+'_me')||'null');const ap=sessionStorage.getItem(KEY+'_admin');if(ap){adminPin=ap;adminOK=true;}}catch(e){}
   if(me&&!S.users.find(u=>u.id===me.id)){if(REMOTE)S.users.push(me);else me=null;}
   if(!REMOTE&&adminOK&&adminPin!==LOCAL_PIN)adminOK=false;
-}catch(e){console.error(e);$('#loading').innerHTML='<div style="padding:24px;text-align:center"><b>데이터를 불러오지 못했어요</b><br><span class="tiny">'+esc(e&&e.message||e)+'</span><br><button class="btn sm sub" style="margin-top:14px" onclick="location.reload()">다시 시도</button></div>';return;}
-$('#brandName').textContent=S.settings.name||'SKMS 아고라';document.title=S.settings.name||'SKMS 아고라';if(C!=='main'){$('#campTag').textContent=C;$('#campTag').hidden=false;}
+}catch(e){console.error(e);$('#loading').innerHTML='<div style="padding:24px;text-align:center"><b>데이터 로드 오류</b></div>';return;}
+$('#brandName').textContent=S.settings.name||'SKMS 아고라';document.title=S.settings.name||'SKMS 아고라';
+if(C!=='main'){$('#campTag').textContent=C;$('#campTag').hidden=false;}
 $('#loading').remove();
 window.addEventListener('focus',()=>{if(REMOTE&&me&&view.name!=='detail')maybeRefresh().then(render);});
 render();
