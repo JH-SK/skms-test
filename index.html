@@ -785,7 +785,8 @@ function renderIdeas(app){
     ${!canSee?`<div class="lock"><span>🔒</span><span>관리자 설정에 의해 비공개 처리 중입니다.</span></div>${mine.map(i=>ideaCard(i,um)).join('')}`
       :(all.length?all.map(i=>ideaCard(i,um)).join(''):`<div class="empty">아직 제안이 없어요. 첫 제안을 올려 볼까요?</div>`)}
   </div>`;
-  const cnt=()=>{const ta=$('#ideaBody');if(ta)$('#ideaCnt').textContent=ta.value.length;};cnt();   $$('[data-topic]').forEach(b=>b.onclick=()=>{view.topic=b.dataset.topic;render();});$('#isort button')?.forEach(b=>b.onclick=()=>{view.isort=b.dataset.s;render();});
+  const cnt=()=>{const ta=$('#ideaBody');if(ta)$('#ideaCnt').textContent=ta.value.length;};cnt();   $$('[data-topic]').forEach(b=>b.onclick=()=>{view.topic=b.dataset.topic;render();});
+  const isortBtn=$('#isort');if(isortBtn)$$('button',isortBtn).forEach(b=>b.onclick=()=>{view.isort=b.dataset.s;render();});
   const nw=$('#ideaNew');if(nw)nw.onclick=()=>{view.compose=true;view.ctopic=cur\vert{}\vert{}topics[0]?.id;render();setTimeout(()=>$('#ideaBody')?.focus(),60);};
   const ta=$('#ideaBody');if(ta)ta.oninput=()=>{cnt();view.draft=ta.value;};
   $$('[data-ctopic]').forEach(b=>b.onclick=()=>{view.ctopic=b.dataset.ctopic;$$
